@@ -1,0 +1,98 @@
+.how { background: var(--color-cream); padding: 80px 0 80px; }
+.how .section-heading { line-height: 1.5; }
+.how .section-lead { margin-top: 3px; line-height: normal; }
+
+.steps { margin-top: 55px; }
+
+.step {
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1fr);
+  column-gap: 30px;
+}
+
+.step__marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.step__number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--color-lime);
+  font-family: var(--font-heading);
+  font-size: 22px;
+  line-height: 1;
+  color: var(--color-ink);
+}
+.step--last .step__number { background: var(--color-orange); }
+.step__line {
+  flex: 1;
+  width: 2px;
+  min-height: 24px;
+  background: var(--color-border);
+}
+
+.step__content {
+  max-width: 740px;
+  min-height: 150px;
+  padding-top: 4px;
+  padding-bottom: 32px;
+}
+.step--last .step__content { min-height: 0; padding-bottom: 0; }
+.step__content h3 {
+  font-size: 24px;
+  color: var(--color-heading);
+}
+.step__content p {
+  margin-top: 2px;
+  font-size: 14.5px;
+  line-height: 22px;
+  color: var(--color-text);
+}
+
+.how__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  column-gap: 48px;
+  align-items: start;
+  margin-top: 55px;
+}
+.how__layout .steps { margin-top: 0; }
+.how-cycle {
+  padding: 28px;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  background: var(--color-white);
+}
+.how-cycle h3 { margin-top: 10px; font-size: 24px; line-height: 1.25; color: var(--color-heading); }
+.how-cycle ul { display: grid; gap: 12px; margin-top: 14px; }
+.how-cycle li {
+  position: relative;
+  padding-left: 16px;
+  font-size: 14.5px;
+  line-height: 22px;
+  color: var(--color-text);
+}
+.how-cycle li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-lime);
+}
+@media (max-width: 900px) {
+  .how__layout { grid-template-columns: minmax(0, 1fr); row-gap: 32px; }
+}
+@media (max-width: 768px) {
+  .how__layout { margin-top: 28px; }
+  .how-cycle { padding: 24px; }
+  .how-cycle h3 { font-size: 22px; }
+}
