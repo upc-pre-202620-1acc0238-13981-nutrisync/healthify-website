@@ -58,3 +58,165 @@
         </div>
       </div>
     </section>
+
+    <section class="faq snap-section" id="preguntas" aria-labelledby="faq-title">
+      <div class="container faq__layout">
+
+        <div class="faq__intro">
+          <span class="eyebrow" data-i18n="faq_eyebrow">PREGUNTAS FRECUENTES</span>
+          <h2 class="faq__title" id="faq-title" data-i18n="faq_title">Lo que más nos preguntan</h2>
+          <p class="faq__subtitle" data-i18n="faq_subtitle">Pacientes y nutricionistas suelen tener las mismas dudas. Toca una pregunta para ver la respuesta.</p>
+
+          <div class="faq__filters" role="group" aria-label="Filtrar preguntas por tema" data-i18n-aria="faq_filters_aria">
+            <button class="filter-chip is-active" type="button" data-filter="all" aria-pressed="true" data-i18n="faq_filter_all">Todas</button>
+            <button class="filter-chip" type="button" data-filter="pacientes" aria-pressed="false" data-i18n="faq_filter_patients">Pacientes</button>
+            <button class="filter-chip" type="button" data-filter="nutricionistas" aria-pressed="false" data-i18n="faq_filter_nutri">Nutricionistas</button>
+            <button class="filter-chip" type="button" data-filter="privacidad" aria-pressed="false" data-i18n="faq_filter_privacy">Privacidad</button>
+            <button class="filter-chip" type="button" data-filter="ia" aria-pressed="false" data-i18n="faq_filter_ai">IA</button>
+          </div>
+        </div>
+
+        <div class="faq__list" role="list">
+          <div class="faq-item is-open" role="listitem" data-category="pacientes">
+            <button class="faq-item__question" type="button" id="faq-q1" aria-expanded="true" aria-controls="faq-a1">
+              <span data-i18n="faq1_q">¿Puedo usarlo sin nutricionista?</span>
+              <span class="faq-item__toggle" aria-hidden="true">
+                <img class="icon-plus" src="assets/icons/plus.svg" alt="" width="18" height="18" />
+                <img class="icon-minus" src="assets/icons/minus.svg" alt="" width="18" height="18" />
+              </span>
+            </button>
+            <div class="faq-item__answer" id="faq-a1" role="region" aria-labelledby="faq-q1">
+              <div class="faq-item__answer-inner">
+                <p data-i18n="faq1_a">No. El acceso del paciente se abre únicamente cuando un nutricionista genera una invitación por código QR en consulta.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item" role="listitem" data-category="pacientes">
+            <button class="faq-item__question" type="button" id="faq-q2" aria-expanded="false" aria-controls="faq-a2">
+              <span data-i18n="faq2_q">¿Qué tan exacta es la estimación por foto?</span>
+              <span class="faq-item__toggle" aria-hidden="true">
+                <img class="icon-plus" src="assets/icons/plus.svg" alt="" width="18" height="18" />
+                <img class="icon-minus" src="assets/icons/minus.svg" alt="" width="18" height="18" />
+              </span>
+            </button>
+            <div class="faq-item__answer" id="faq-a2" role="region" aria-labelledby="faq-q2">
+              <div class="faq-item__answer-inner">
+                <p data-i18n="faq2_a">Es una aproximación y siempre se muestra con su nivel de confianza. Puedes confirmarla, ajustar la porción o registrar a mano en su lugar.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item" role="listitem" data-category="nutricionistas privacidad">
+            <button class="faq-item__question" type="button" id="faq-q3" aria-expanded="false" aria-controls="faq-a3">
+              <span data-i18n="faq3_q">¿El nutricionista puede editar mi diario?</span>
+              <span class="faq-item__toggle" aria-hidden="true">
+                <img class="icon-plus" src="assets/icons/plus.svg" alt="" width="18" height="18" />
+                <img class="icon-minus" src="assets/icons/minus.svg" alt="" width="18" height="18" />
+              </span>
+            </button>
+            <div class="faq-item__answer" id="faq-a3" role="region" aria-labelledby="faq-q3">
+              <div class="faq-item__answer-inner">
+                <p data-i18n="faq3_a">No. Tu nutricionista puede leer lo que registras, pero nunca escribir ni corregir tu diario.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item" role="listitem" data-category="pacientes">
+            <button class="faq-item__question" type="button" id="faq-q4" aria-expanded="false" aria-controls="faq-a4">
+              <span data-i18n="faq4_q">¿Qué pasa si no registro un día?</span>
+              <span class="faq-item__toggle" aria-hidden="true">
+                <img class="icon-plus" src="assets/icons/plus.svg" alt="" width="18" height="18" />
+                <img class="icon-minus" src="assets/icons/minus.svg" alt="" width="18" height="18" />
+              </span>
+            </button>
+            <div class="faq-item__answer" id="faq-a4" role="region" aria-labelledby="faq-q4">
+              <div class="faq-item__answer-inner">
+                <p data-i18n="faq4_a">Nada malo. Un día sin registro se lee como un día sin datos, no como un incumplimiento. Como mucho, recibes un recordatorio amable.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item" role="listitem" data-category="pacientes privacidad">
+            <button class="faq-item__question" type="button" id="faq-q5" aria-expanded="false" aria-controls="faq-a5">
+              <span data-i18n="faq5_q">¿Puedo retirar mi consentimiento?</span>
+              <span class="faq-item__toggle" aria-hidden="true">
+                <img class="icon-plus" src="assets/icons/plus.svg" alt="" width="18" height="18" />
+                <img class="icon-minus" src="assets/icons/minus.svg" alt="" width="18" height="18" />
+              </span>
+            </button>
+            <div class="faq-item__answer" id="faq-a5" role="region" aria-labelledby="faq-q5">
+              <div class="faq-item__answer-inner">
+                <p data-i18n="faq5_a">Sí, cuando quieras y sin dar ninguna razón, desde Ajustes. Desde ese momento tu nutricionista deja de ver tus registros nuevos.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item" role="listitem" data-category="pacientes nutricionistas">
+            <button class="faq-item__question" type="button" id="faq-q6" aria-expanded="false" aria-controls="faq-a6">
+              <span data-i18n="faq6_q">¿Funciona sin internet?</span>
+              <span class="faq-item__toggle" aria-hidden="true">
+                <img class="icon-plus" src="assets/icons/plus.svg" alt="" width="18" height="18" />
+                <img class="icon-minus" src="assets/icons/minus.svg" alt="" width="18" height="18" />
+              </span>
+            </button>
+            <div class="faq-item__answer" id="faq-a6" role="region" aria-labelledby="faq-q6">
+              <div class="faq-item__answer-inner">
+                <p data-i18n="faq6_a">Sí. Registras igual y todo se envía automáticamente cuando vuelve la conexión.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item" role="listitem" data-category="pacientes nutricionistas ia">
+            <button class="faq-item__question" type="button" id="faq-q7" aria-expanded="false" aria-controls="faq-a7">
+              <span data-i18n="faq7_q">¿Cómo usa Healthify la IA?</span>
+              <span class="faq-item__toggle" aria-hidden="true">
+                <img class="icon-plus" src="assets/icons/plus.svg" alt="" width="18" height="18" />
+                <img class="icon-minus" src="assets/icons/minus.svg" alt="" width="18" height="18" />
+              </span>
+            </button>
+            <div class="faq-item__answer" id="faq-a7" role="region" aria-labelledby="faq-q7">
+              <div class="faq-item__answer-inner">
+                <p data-i18n="faq7_a">Para sugerir, nunca para decidir. Al nutricionista le propone un diagnóstico y ajustes al plan; al paciente, un resumen de su semana, ideas de comidas y preguntas para su consulta. Siempre decide una persona.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item" role="listitem" data-category="pacientes privacidad ia">
+            <button class="faq-item__question" type="button" id="faq-q8" aria-expanded="false" aria-controls="faq-a8">
+              <span data-i18n="faq8_q">¿Puedo desactivar las funciones con IA?</span>
+              <span class="faq-item__toggle" aria-hidden="true">
+                <img class="icon-plus" src="assets/icons/plus.svg" alt="" width="18" height="18" />
+                <img class="icon-minus" src="assets/icons/minus.svg" alt="" width="18" height="18" />
+              </span>
+            </button>
+            <div class="faq-item__answer" id="faq-a8" role="region" aria-labelledby="faq-q8">
+              <div class="faq-item__answer-inner">
+                <p data-i18n="faq8_a">Sí. En Ajustes → Funciones con IA eliges cuáles usar. Si las desactivas, dejamos de usar tu diario para esas funciones; tu plan y tus registros no cambian.</p>
+              </div>
+            </div>
+          </div>
+          <div class="faq-item" role="listitem" data-category="pacientes">
+            <button class="faq-item__question" type="button" id="faq-q9" aria-expanded="false" aria-controls="faq-a9">
+              <span data-i18n="faq9_q">¿Cómo me preparo para mi consulta?</span>
+              <span class="faq-item__toggle" aria-hidden="true">
+                <img class="icon-plus" src="assets/icons/plus.svg" alt="" width="18" height="18" />
+                <img class="icon-minus" src="assets/icons/minus.svg" alt="" width="18" height="18" />
+              </span>
+            </button>
+            <div class="faq-item__answer" id="faq-a9" role="region" aria-labelledby="faq-q9">
+              <div class="faq-item__answer-inner">
+                <p data-i18n="faq9_a">En Mis consultas ves cómo prepararte (por ejemplo, si debes ir en ayunas) y puedes contarle a tu nutricionista cómo te fue antes de la cita.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="faq__help">
+          <div class="help-card">
+            <h3 data-i18n="faq_help_title">¿No encontraste tu respuesta?</h3>
+            <p data-i18n="faq_help_text">Te respondemos en menos de 48 horas hábiles.</p>
+            <a class="btn btn--primary btn--sm" href="contact.html#formulario">
+              <span data-i18n="faq_help_cta">Escríbenos</span>
+              <img src="assets/icons/arrow-right.svg" alt="" width="16" height="16" />
+            </a>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+  </main>

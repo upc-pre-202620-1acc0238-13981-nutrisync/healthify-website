@@ -55,6 +55,167 @@
   color: var(--color-text);
 }
 
+.faq { background: var(--color-cream); padding: 100px 0 124px; }
+
+.faq__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 380px) minmax(0, 720px);
+  grid-template-areas:
+    "intro list"
+    "help  list";
+  grid-template-rows: auto 1fr;
+  column-gap: 100px;
+  justify-content: space-between;
+}
+.faq__intro { grid-area: intro; }
+.faq__list  { grid-area: list; }
+.faq__help  { grid-area: help; align-self: start; }
+
+.faq__title {
+  margin-top: 13px;
+  font-size: 42px;
+  line-height: 1.1;
+  color: var(--color-heading);
+}
+.faq__subtitle {
+  max-width: 360px;
+  margin-top: 16px;
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--color-text);
+}
+
+.faq__filters {
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content;
+  gap: 8px;
+  margin-top: 25px;
+}
+
+.filter-chip {
+  padding: 7px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  background: var(--color-white);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: normal;
+  color: var(--color-text);
+  white-space: nowrap;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+.filter-chip:hover { border-color: var(--color-heading); }
+.filter-chip.is-active,
+.filter-chip[aria-pressed="true"] {
+  border-color: var(--color-ink);
+  background: var(--color-ink);
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.help-card {
+  position: relative;
+  overflow: hidden;
+  margin-top: 34px;
+  padding: 28px 28px 24px;
+  border-radius: var(--radius-lg);
+  background: var(--color-ink);
+}
+.help-card::after {
+  content: '';
+  position: absolute;
+  left: 260px;
+  top: -50px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: var(--lime-14);
+  pointer-events: none;
+}
+.help-card h3 {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  font-size: 22px;
+  color: var(--color-white);
+}
+.help-card p {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin-top: 5px;
+  font-size: 14px;
+  line-height: normal;
+  color: var(--color-lighter);
+}
+.help-card .btn { position: relative; z-index: 1; margin-top: 10px; }
+
+.faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq-item {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-white);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.faq-item.is-open {
+  border-color: var(--color-lime);
+  box-shadow: 0 0 0 .5px var(--color-lime), 0 10px 14px rgba(0, 0, 0, .06);
+}
+.faq-item[hidden] { display: none; }
+
+.faq-item__question {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 22px 24px 22px 28px;
+  text-align: left;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: normal;
+  color: var(--color-heading);
+}
+.faq-item__question span:first-child { flex: 1; }
+
+.faq-item__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border: 1.5px solid var(--color-border);
+  border-radius: 50%;
+  transition: background var(--transition), border-color var(--transition);
+}
+.faq-item__toggle img { width: 18px; height: 18px; }
+.faq-item__toggle .icon-minus { display: none; }
+.faq-item.is-open .faq-item__toggle { border-color: var(--color-lime); background: var(--color-lime); }
+.faq-item.is-open .faq-item__toggle .icon-plus { display: none; }
+.faq-item.is-open .faq-item__toggle .icon-minus { display: block; }
+
+.faq-item__answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows .3s ease;
+}
+.faq-item.is-open .faq-item__answer { grid-template-rows: 1fr; }
+.faq-item__answer-inner { overflow: hidden; }
+.faq-item.is-open .faq-item__question { padding-bottom: 12px; }
+.faq-item__question { transition: padding var(--transition); }
+.faq-item__answer p {
+  padding: 0 24px 22px 28px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
 .how__layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 340px;
