@@ -1,0 +1,148 @@
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-ink);
+}
+.page-hero .container { position: relative; }
+
+.page-hero__title {
+  margin-top: 14px;
+  font-size: 64px;
+  line-height: 1.1;
+  color: var(--color-white);
+}
+.page-hero__lead {
+  margin-top: 36px;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--color-lighter);
+}
+
+.about-hero .container { min-height: 500px; padding-top: 110px; padding-bottom: 64px; }
+.about-hero .page-hero__lead { max-width: 640px; }
+.about-hero__visual {
+  position: absolute;
+  top: 40px;
+  right: calc(var(--gutter) - 50px);
+  width: 470px;
+  height: 420px;
+}
+.about-hero__circle--lg { left: 0; top: 0; width: 420px; height: 420px; background: var(--lime-12); }
+.about-hero__circle--sm { left: 310px; top: 260px; width: 160px; height: 160px; background: rgba(245, 166, 35, .9); }
+.about-hero__logo {
+  position: absolute;
+  left: 100px;
+  top: 114px;
+  width: 220px;
+  height: 193px;
+  object-fit: contain;
+}
+
+.story { background: var(--color-cream); padding: 96px 0; }
+.story__inner { max-width: 1088px; text-align: center; }
+.story__title {
+  margin-top: 24px;
+  font-size: clamp(44px, 5.6vw, 80px);
+  line-height: 1.12;
+  color: var(--color-heading);
+}
+.text-green { color: var(--color-green); }
+.story__text {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 56px;
+  margin-top: 40px;
+  text-align: left;
+}
+.story__text p {
+  font-size: 17px;
+  line-height: 27px;
+  color: var(--color-text);
+}
+
+.purpose { background: var(--color-cream); padding: 80px 0 80px; overflow-x: clip; }
+.purpose__title {
+  margin-top: 10px;
+  font-size: 42px;
+  line-height: 1.2;
+  color: var(--color-heading);
+}
+.purpose__subtitle {
+  margin-top: 8px;
+  font-size: 17px;
+  line-height: normal;
+  color: var(--color-text);
+}
+
+.purpose__items { margin-top: 58px; }
+
+.purpose-item {
+  display: grid;
+  align-items: start;
+}
+.purpose-item--mission { grid-template-columns: 260px minmax(0, 440px); column-gap: 50px; }
+.purpose-item--vision {
+  grid-template-columns: minmax(0, 1fr) 260px;
+  column-gap: 90px;
+  margin-top: 20px;
+}
+.purpose-item--vision .purpose-item__text { justify-self: end; max-width: 460px; text-align: right; }
+
+.purpose-item__text { padding-top: 30px; }
+.purpose-item__label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  line-height: normal;
+  color: var(--color-orange-text);
+}
+.purpose-item--vision .purpose-item__label { color: var(--color-green); }
+.purpose-item__text h3 {
+  margin-top: 8px;
+  font-size: 36px;
+  line-height: 1.15;
+  color: var(--color-heading);
+}
+.purpose-item__text p {
+  max-width: 420px;
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+.purpose-item--vision .purpose-item__text p { margin-left: auto; }
+
+.orbit {
+  position: relative;
+  width: 260px;
+  height: 260px;
+}
+.orbit__halo { inset: 0; }
+.orbit__core { left: 50px; top: 50px; width: 160px; height: 160px; }
+.orbit__icon { position: absolute; left: 94px; top: 94px; width: 72px; height: 72px; }
+.orbit__sat  { left: 200px; top: 14px; width: 48px; height: 48px; }
+.orbit__dot  { width: 30px; height: 30px; background: var(--color-ink); }
+.orbit__path { position: absolute; width: 72px; height: 48px; }
+
+.orbit--mission .orbit__halo { background: var(--orange-18); }
+.orbit--mission .orbit__core { background: var(--color-orange); }
+.orbit--mission .orbit__sat  { background: var(--color-lime); }
+.orbit--mission .orbit__dot  { left: -56px; top: 197px; }
+.orbit--mission .orbit__path { left: -42px; top: 166px; }
+
+.orbit--vision .orbit__halo { background: var(--lime-18); }
+.orbit--vision .orbit__core { background: var(--color-lime); }
+.orbit--vision .orbit__sat  { background: var(--color-orange); }
+.orbit--vision .orbit__dot  { left: -6px; top: 200px; }
+.orbit--vision .orbit__path { left: 239px; top: 73px; }
+.orbit--vision .orbit__end  { left: 296px; top: 70px; width: 20px; height: 20px; background: var(--color-green); }
+
+.purpose-item__illus-mobile { display: none; width: 150px; height: 150px; }
+
+@media (max-width: 1400px) {
+  .hero__visual { transform: scale(.9); right: 0; }
+  .about-hero__visual { transform: scale(.9); transform-origin: top right; right: 0; }
+  .purpose-item--mission { padding-left: 40px; }
+  .purpose-item--vision { padding-right: 60px; }
+}

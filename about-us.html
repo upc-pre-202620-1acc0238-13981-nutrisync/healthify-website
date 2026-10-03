@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es-419">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title data-i18n="meta_title_about">Nosotros | Healthify</title>
+  <meta name="description" content="Conoce Healthify: nuestra historia, misión, visión, los principios que nos guían y el equipo detrás de la herramienta de seguimiento nutricional entre consultas." />
+  <meta name="keywords" content="Healthify, nutricionista, paciente, seguimiento nutricional, registro de comidas, registro por foto, autopesaje, expediente clínico, nutrición" />
+  <meta name="author" content="Healthify Team" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#101109" />
+
+  <meta property="og:title" content="Nosotros | Healthify" />
+  <meta property="og:description" content="Conoce Healthify: nuestra historia, misión, visión, los principios que nos guían y el equipo detrás de la herramienta de seguimiento nutricional entre consultas." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_419" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:image" content="assets/images/og-image.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Nosotros | Healthify" />
+  <meta name="twitter:description" content="Conoce Healthify: nuestra historia, misión, visión, los principios que nos guían y el equipo detrás de la herramienta de seguimiento nutricional entre consultas." />
+
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="page-about snap-page">
+
+  <a class="skip-link" href="#main-content" data-i18n="skip_link">Saltar al contenido principal</a>
+
+  <header class="site-header" role="banner">
+    <nav class="navbar" aria-label="Navegación principal" data-i18n-aria="nav_main_aria">
+      <div class="navbar__inner">
+        <a class="brand" href="index.html" aria-label="Healthify, ir al inicio" data-i18n-aria="nav_home_aria">
+          <img class="brand__logo" src="assets/images/logo.webp" alt="" width="40" height="35" />
+          <span aria-hidden="true">health<span class="brand__accent">ify</span></span>
+        </a>
+
+        <div class="navbar__right">
+          <ul class="navbar__links" role="list">
+            <li><a href="index.html#paciente" data-i18n="nav_patient">Paciente</a></li>
+            <li><a href="index.html#nutricionista" data-i18n="nav_nutritionist">Nutricionista</a></li>
+            <li><a href="index.html#como-funciona" data-i18n="nav_how">Cómo funciona</a></li>
+            <li><a href="about-us.html" class="active" aria-current="page" data-i18n="nav_about">Nosotros</a></li>
+            <li><a href="contact.html" data-i18n="nav_contact">Contacto</a></li>
+          </ul>
+          <div class="lang-switch" role="group" aria-label="Idioma" data-i18n-aria="lang_switch_aria">
+            <button class="lang-switch__opt" type="button" data-lang="es" lang="es" aria-pressed="true" aria-label="Español">ES</button>
+            <button class="lang-switch__opt" type="button" data-lang="en" lang="en" aria-pressed="false" aria-label="English">EN</button>
+          </div>
+          <!-- TODO: replace href with the app login URL -->
+          <a class="navbar__login" href="#iniciar-sesion" data-i18n="nav_login">Iniciar sesión</a>
+          <a class="btn btn--primary btn--wide" href="contact.html?rol=nutricionista#formulario" data-i18n="nav_cta">Soy nutricionista</a>
+        </div>
+
+        <div class="lang-switch lang-switch--compact" role="group" aria-label="Idioma" data-i18n-aria="lang_switch_aria">
+          <button class="lang-switch__opt" type="button" data-lang="es" lang="es" aria-pressed="true" aria-label="Español">ES</button>
+          <button class="lang-switch__opt" type="button" data-lang="en" lang="en" aria-pressed="false" aria-label="English">EN</button>
+        </div>
+
+        <button class="navbar__toggle" type="button" aria-expanded="false" aria-controls="mobileMenu"
+                aria-label="Abrir menú">
+          <img class="icon-menu" src="assets/icons/menu.svg" alt="" width="24" height="24" />
+          <img class="icon-close" src="assets/icons/close.svg" alt="" width="24" height="24" />
+        </button>
+      </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu" aria-label="Menú de navegación" data-i18n-aria="menu_aria">
+      <nav class="mobile-menu__nav">
+        <a class="mobile-menu__link" href="index.html#paciente">
+          <span data-i18n="nav_patient">Paciente</span>
+          <img src="assets/icons/chevron-right.svg" alt="" width="20" height="20" />
+        </a>
+        <a class="mobile-menu__link" href="index.html#nutricionista">
+          <span data-i18n="nav_nutritionist">Nutricionista</span>
+          <img src="assets/icons/chevron-right.svg" alt="" width="20" height="20" />
+        </a>
+        <a class="mobile-menu__link" href="index.html#como-funciona">
+          <span data-i18n="nav_how">Cómo funciona</span>
+          <img src="assets/icons/chevron-right.svg" alt="" width="20" height="20" />
+        </a>
+        <a class="mobile-menu__link active" aria-current="page" href="about-us.html">
+          <span data-i18n="nav_about">Nosotros</span>
+          <img src="assets/icons/chevron-right.svg" alt="" width="20" height="20" />
+        </a>
+        <a class="mobile-menu__link" href="contact.html">
+          <span data-i18n="nav_contact">Contacto</span>
+          <img src="assets/icons/chevron-right.svg" alt="" width="20" height="20" />
+        </a>
+      </nav>
+
+      <div class="mobile-menu__ctas">
+        <a class="btn btn--primary btn--block" href="contact.html?rol=nutricionista#formulario" data-i18n="nav_cta">Soy nutricionista</a>
+        <a class="btn btn--outline-light btn--block" href="index.html#paciente" data-i18n="nav_invited">Fui invitado por mi nutricionista →</a>
+        <a class="btn btn--outline-light btn--block" href="#iniciar-sesion" data-i18n="nav_login">Iniciar sesión</a>
+      </div>
+
+      <div class="mobile-menu__spacer"></div>
+
+      <div class="mobile-menu__contact">
+        <span class="mobile-menu__contact-label" data-i18n="menu_contact">CONTACTO</span>
+        <a class="mobile-menu__contact-email" href="mailto:hola@healthify.app">hola@healthify.app</a>
+        <span class="mobile-menu__contact-meta" data-i18n="menu_contact_meta">+51 900 000 000 · Lun a vie 9:00 - 18:00</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <section class="page-hero about-hero snap-section" aria-labelledby="about-title">
+      <div class="container">
+        <span class="eyebrow eyebrow--lime" data-i18n="about_eyebrow">NOSOTROS</span>
+        <h1 class="page-hero__title" id="about-title" data-i18n="about_title" data-i18n-html>Somos <span class="text-lime">Healthify.</span></h1>
+        <p class="page-hero__lead" data-i18n="about_subtitle">Nacimos de una pregunta simple: ¿qué pasa con el paciente entre una consulta y la siguiente? Healthify lo hace visible, sin juzgar al paciente y sin reemplazar el criterio del nutricionista.</p>
+
+        <div class="about-hero__visual" aria-hidden="true">
+          <span class="circle about-hero__circle--lg"></span>
+          <span class="circle about-hero__circle--sm"></span>
+          <img class="about-hero__logo" src="assets/images/logo.webp" alt="" width="220" height="193" />
+        </div>
+      </div>
+    </section>
+
+    <section class="story snap-section" aria-labelledby="story-title">
+      <div class="container story__inner">
+        <span class="eyebrow" data-i18n="story_eyebrow">NUESTRA HISTORIA</span>
+        <h2 class="story__title" id="story-title" data-i18n="story_title" data-i18n-html>Comer bien no debería depender de la <span class="text-green">memoria.</span></h2>
+        <div class="story__text">
+          <p data-i18n="story_p1">Entre consulta y consulta pasan semanas. Cuando el paciente vuelve, el nutricionista trabaja con lo que el paciente recuerda: un dato incompleto, a veces maquillado por miedo a ser juzgado.</p>
+          <p data-i18n="story_p2">Por eso construimos Healthify: una herramienta clínica donde el paciente registra en el momento, con una mano y sin culpa, y el nutricionista ve la tendencia real para decidir con criterio.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="purpose snap-section" aria-labelledby="purpose-title">
+      <div class="container">
+        <span class="eyebrow" data-i18n="purpose_eyebrow">PROPÓSITO</span>
+        <h2 class="purpose__title" id="purpose-title" data-i18n="purpose_title">De dónde partimos, a dónde vamos</h2>
+        <p class="purpose__subtitle" data-i18n="purpose_subtitle">El recorrido que guía cada decisión de Healthify.</p>
+
+        <div class="purpose__items">
+          <article class="purpose-item purpose-item--mission">
+            <div class="orbit orbit--mission" aria-hidden="true">
+              <img class="orbit__path" src="assets/images/path-end.svg" alt="" width="72" height="48" />
+              <span class="circle orbit__halo"></span>
+              <span class="circle orbit__core"></span>
+              <img class="orbit__icon" src="assets/icons/target.svg" alt="" width="72" height="72" />
+              <span class="circle orbit__sat"></span>
+              <span class="circle orbit__dot"></span>
+            </div>
+            <img class="purpose-item__illus-mobile" src="assets/images/mission.svg" alt="" width="150" height="150" />
+            <div class="purpose-item__text">
+              <span class="purpose-item__label" data-i18n="mission_label">01 · HOY · MISIÓN</span>
+              <h3 data-i18n="mission_title">Ver lo que pasa entre consultas.</h3>
+              <p data-i18n="mission_text">Que el nutricionista vea lo que pasa entre consultas, y que el paciente pueda contarlo sin miedo a ser juzgado.</p>
+            </div>
+          </article>
+
+          <article class="purpose-item purpose-item--vision">
+            <div class="purpose-item__text">
+              <span class="purpose-item__label" data-i18n="vision_label">02 · MAÑANA · VISIÓN</span>
+              <h3 data-i18n="vision_title">El cuidado, en el centro de Latinoamérica.</h3>
+              <p data-i18n="vision_text">Ser la herramienta de referencia en Latinoamérica para el seguimiento nutricional entre consultas, con la ética del cuidado en el centro.</p>
+            </div>
+            <div class="orbit orbit--vision" aria-hidden="true">
+              <img class="orbit__path" src="assets/images/path-end.svg" alt="" width="72" height="48" />
+              <span class="circle orbit__halo"></span>
+              <span class="circle orbit__core"></span>
+              <img class="orbit__icon" src="assets/icons/eye.svg" alt="" width="72" height="72" />
+              <span class="circle orbit__sat"></span>
+              <span class="circle orbit__dot"></span>
+              <span class="circle orbit__end"></span>
+            </div>
+            <img class="purpose-item__illus-mobile" src="assets/images/vision.svg" alt="" width="150" height="150" />
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__main">
+
+        <div class="footer__brand">
+          <a class="brand" href="index.html" aria-label="Healthify, ir al inicio" data-i18n-aria="nav_home_aria">
+            <img class="brand__logo" src="assets/images/logo.webp" alt="" width="44" height="39" />
+            <span aria-hidden="true">health<span class="brand__accent">ify</span></span>
+          </a>
+          <p class="footer__tagline" data-i18n="footer_tagline">Herramienta clínica para nutricionista y paciente. Captura la información entre consultas, sin reemplazar el expediente clínico.</p>
+        </div>
+
+        <nav class="footer__col" aria-labelledby="footer-nav-title">
+          <h2 id="footer-nav-title" data-i18n="footer_nav">NAVEGACIÓN</h2>
+          <ul role="list">
+            <li><a href="index.html" data-i18n="footer_home">Inicio</a></li>
+            <li><a href="index.html#como-funciona" data-i18n="nav_how">Cómo funciona</a></li>
+            <li><a href="about-us.html" data-i18n="nav_about">Nosotros</a></li>
+            <li><a href="contact.html" data-i18n="nav_contact">Contacto</a></li>
+            <li><a href="#iniciar-sesion" data-i18n="nav_login">Iniciar sesión</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer__col" aria-labelledby="footer-legal-title">
+          <h2 id="footer-legal-title" data-i18n="footer_legal">LEGAL</h2>
+          <ul role="list">
+            <li><a href="terms.html" data-i18n="footer_terms">Términos y condiciones</a></li>
+            <li><a href="terms.html#privacidad" data-i18n="footer_privacy">Aviso de privacidad</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__col">
+          <h2 id="footer-social-title" data-i18n="footer_social">REDES</h2>
+          <ul role="list" aria-labelledby="footer-social-title">
+            <li>
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                Instagram <img src="assets/icons/external.svg" alt="" width="11" height="11" />
+                <span class="sr-only" data-i18n="new_tab">(se abre en una pestaña nueva)</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                Facebook <img src="assets/icons/external.svg" alt="" width="11" height="11" />
+                <span class="sr-only" data-i18n="new_tab">(se abre en una pestaña nueva)</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+                LinkedIn <img src="assets/icons/external.svg" alt="" width="11" height="11" />
+                <span class="sr-only" data-i18n="new_tab">(se abre en una pestaña nueva)</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h2 id="footer-contact-title" data-i18n="footer_contact">CONTACTO</h2>
+          <ul role="list" aria-labelledby="footer-contact-title">
+            <li><a href="mailto:hola@healthify.app">hola@healthify.app</a></li>
+            <li><a href="tel:+51900000000">+51 900 000 000</a></li>
+            <li class="is-muted" data-i18n="footer_hours">Lun a vie · 9:00 - 18:00</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy" data-i18n="footer_copy">© 2026 Healthify. Todos los derechos reservados.</p>
+        <label class="lang-picker">
+          <span data-i18n="footer_lang">Idioma:</span>
+          <select class="lang-select" aria-label="Seleccionar idioma" data-i18n-aria="lang_select_aria">
+            <option value="es" lang="es">Español</option>
+            <option value="en" lang="en">English</option>
+          </select>
+        </label>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
