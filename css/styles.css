@@ -356,6 +356,16 @@
   }
 }
 
+@media (min-width: 1101px) and (min-height: 640px) {
+  html:has(body.snap-page) { scroll-padding-top: var(--nav-height); }
+  .snap-page .snap-section { min-height: calc(100vh - var(--nav-height)); }
+  .snap-page .snap-section:not(.showcase):not(.hero) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
 .how__layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 340px;
