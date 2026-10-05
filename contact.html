@@ -153,6 +153,103 @@
       </div>
     </section>
 
+    <section class="contact-form-section" id="formulario" aria-labelledby="help-title">
+      <div class="container">
+
+        <div class="contact-options">
+          <h2 class="contact-options__title" id="help-title" data-i18n="help_title">¿Cómo podemos ayudarte?</h2>
+          <div class="contact-options__list">
+            <button class="option-card" type="button" data-role="nutricionista" aria-pressed="false">
+              <span class="option-card__title" data-i18n="opt1_title">Soy nutricionista</span>
+              <span class="option-card__desc" data-i18n="opt1_desc">Quiero conocer Healthify o solicitar acceso para mi consulta.</span>
+            </button>
+            <button class="option-card option-card--green" type="button" data-role="paciente" aria-pressed="false">
+              <span class="option-card__title" data-i18n="opt2_title">Soy paciente</span>
+              <span class="option-card__desc" data-i18n="opt2_desc">Para usar la app, pídele el código de invitación a tu nutricionista. Si ya lo tienes y algo falla, escríbenos.</span>
+            </button>
+            <button class="option-card option-card--grey" type="button" data-role="otro" aria-pressed="false">
+              <span class="option-card__title" data-i18n="opt3_title">Alianzas</span>
+              <span class="option-card__desc" data-i18n="opt3_desc">Universidades, clínicas y medios.</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h2 class="form-card__title" id="form-title" data-i18n="form_title">Escríbenos</h2>
+
+          <form class="contact-form" id="contactForm" novalidate aria-labelledby="form-title">
+            <div class="form-grid">
+              <div class="field">
+                <label class="field__label" for="contact-name" data-i18n="form_name">Nombre</label>
+                <input class="input" type="text" id="contact-name" name="nombre" autocomplete="given-name" required
+                       placeholder="Tu nombre" data-i18n-placeholder="form_name_ph" aria-describedby="err-name" />
+                <span class="field__error" id="err-name" data-i18n="err_name" aria-live="polite">Ingresa tu nombre.</span>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="contact-lastname" data-i18n="form_lastname">Apellidos</label>
+                <input class="input" type="text" id="contact-lastname" name="apellidos" autocomplete="family-name" required
+                       placeholder="Tus apellidos" data-i18n-placeholder="form_lastname_ph" aria-describedby="err-lastname" />
+                <span class="field__error" id="err-lastname" data-i18n="err_lastname" aria-live="polite">Ingresa tus apellidos.</span>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="contact-email" data-i18n="form_email">Correo electrónico</label>
+                <input class="input" type="email" id="contact-email" name="correo" autocomplete="email" required
+                       placeholder="tucorreo@ejemplo.com" data-i18n-placeholder="form_email_ph" aria-describedby="err-email" />
+                <span class="field__error" id="err-email" data-i18n="err_email" aria-live="polite">Ingresa un correo electrónico válido.</span>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="contact-phone" data-i18n="form_phone">Teléfono (opcional)</label>
+                <input class="input" type="tel" id="contact-phone" name="telefono" autocomplete="tel"
+                       placeholder="+51" data-i18n-placeholder="form_phone_ph" aria-describedby="err-phone" />
+                <span class="field__error" id="err-phone" data-i18n="err_phone" aria-live="polite">Ingresa un teléfono válido, por ejemplo +51 900 000 000.</span>
+              </div>
+
+              <fieldset class="field field--full">
+                <legend data-i18n="form_role">Soy…</legend>
+                <div class="role-chips">
+                  <label class="role-chip">
+                    <input type="radio" name="rol" value="nutricionista" checked />
+                    <span data-i18n="form_role_nutri">Nutricionista</span>
+                  </label>
+                  <label class="role-chip">
+                    <input type="radio" name="rol" value="paciente" />
+                    <span data-i18n="form_role_patient">Paciente</span>
+                  </label>
+                  <label class="role-chip">
+                    <input type="radio" name="rol" value="otro" />
+                    <span data-i18n="form_role_other">Otro</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <div class="field field--full">
+                <label class="field__label" for="contact-message" data-i18n="form_message">Mensaje</label>
+                <textarea class="input" id="contact-message" name="mensaje" required
+                          placeholder="Cuéntanos en qué podemos ayudarte…" data-i18n-placeholder="form_message_ph" aria-describedby="err-message"></textarea>
+                <span class="field__error" id="err-message" data-i18n="err_message" aria-live="polite">Cuéntanos un poco más (mínimo 20 caracteres).</span>
+              </div>
+
+              <div class="consent-wrap field--full">
+                <label class="consent">
+                  <input type="checkbox" id="contact-consent" name="consentimiento" required aria-describedby="err-consent" />
+                  <span data-i18n="form_consent" data-i18n-html>Acepto el <a href="terms.html#privacidad">Aviso de privacidad</a> y el tratamiento de mis datos para responder este mensaje.</span>
+                </label>
+                <span class="field__error" id="err-consent" data-i18n="err_consent" aria-live="polite">Debes aceptar el Aviso de privacidad para continuar.</span>
+              </div>
+            </div>
+
+            <button class="btn btn--primary contact-form__submit" type="submit" data-i18n="form_submit">Enviar mensaje</button>
+            <p class="form-success" id="formSuccess" role="status" data-i18n="form_success">¡Gracias! Recibimos tu mensaje y te responderemos en menos de 48 horas hábiles.</p>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
 
   <footer class="footer" role="contentinfo">
     <div class="container">
