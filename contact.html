@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es-419">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title data-i18n="meta_title_contact">Contacto | Healthify</title>
+  <meta name="description" content="¿Eres nutricionista y quieres probar Healthify con tus pacientes? Escríbenos y te respondemos en menos de 48 horas hábiles." />
+  <meta name="keywords" content="Healthify, nutricionista, paciente, seguimiento nutricional, registro de comidas, registro por foto, autopesaje, expediente clínico, nutrición" />
+  <meta name="author" content="Healthify Team" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#101109" />
+
+  <meta property="og:title" content="Contacto | Healthify" />
+  <meta property="og:description" content="¿Eres nutricionista y quieres probar Healthify con tus pacientes? Escríbenos y te respondemos en menos de 48 horas hábiles." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_419" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:image" content="assets/images/og-image.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contacto | Healthify" />
+  <meta name="twitter:description" content="¿Eres nutricionista y quieres probar Healthify con tus pacientes? Escríbenos y te respondemos en menos de 48 horas hábiles." />
+
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="page-contact">
+
+  <a class="skip-link" href="#main-content" data-i18n="skip_link">Saltar al contenido principal</a>
+
+  <header class="site-header" role="banner">
+    <nav class="navbar" aria-label="Navegación principal" data-i18n-aria="nav_main_aria">
+      <div class="navbar__inner">
+        <a class="brand" href="index.html" aria-label="Healthify, ir al inicio" data-i18n-aria="nav_home_aria">
+          <img class="brand__logo" src="assets/images/logo.webp" alt="" width="40" height="35" />
+          <span aria-hidden="true">health<span class="brand__accent">ify</span></span>
+        </a>
+
+        <div class="navbar__right">
+          <ul class="navbar__links" role="list">
+            <li><a href="index.html#paciente" data-i18n="nav_patient">Paciente</a></li>
+            <li><a href="index.html#nutricionista" data-i18n="nav_nutritionist">Nutricionista</a></li>
+            <li><a href="index.html#como-funciona" data-i18n="nav_how">Cómo funciona</a></li>
+            <li><a href="about-us.html" data-i18n="nav_about">Nosotros</a></li>
+            <li><a href="contact.html" class="active" aria-current="page" data-i18n="nav_contact">Contacto</a></li>
+          </ul>
+          <div class="lang-switch" role="group" aria-label="Idioma" data-i18n-aria="lang_switch_aria">
+            <button class="lang-switch__opt" type="button" data-lang="es" lang="es" aria-pressed="true" aria-label="Español">ES</button>
+            <button class="lang-switch__opt" type="button" data-lang="en" lang="en" aria-pressed="false" aria-label="English">EN</button>
+          </div>
+          <!-- TODO: replace href with the app login URL -->
+          <a class="navbar__login" href="#iniciar-sesion" data-i18n="nav_login">Iniciar sesión</a>
+          <a class="btn btn--primary btn--wide" href="contact.html?rol=nutricionista#formulario" data-i18n="nav_cta">Soy nutricionista</a>
+        </div>
+
+        <div class="lang-switch lang-switch--compact" role="group" aria-label="Idioma" data-i18n-aria="lang_switch_aria">
+          <button class="lang-switch__opt" type="button" data-lang="es" lang="es" aria-pressed="true" aria-label="Español">ES</button>
+          <button class="lang-switch__opt" type="button" data-lang="en" lang="en" aria-pressed="false" aria-label="English">EN</button>
+        </div>
+
+        <button class="navbar__toggle" type="button" aria-expanded="false" aria-controls="mobileMenu"
+                aria-label="Abrir menú">
+          <img class="icon-menu" src="assets/icons/menu.svg" alt="" width="24" height="24" />
+          <img class="icon-close" src="assets/icons/close.svg" alt="" width="24" height="24" />
+        </button>
+      </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu" aria-label="Menú de navegación" data-i18n-aria="menu_aria">
+      <nav class="mobile-menu__nav">
+        <a class="mobile-menu__link" href="index.html#paciente">
+          <span data-i18n="nav_patient">Paciente</span>
+          <img src="assets/icons/chevron-right.svg" alt="" width="20" height="20" />
+        </a>
+        <a class="mobile-menu__link" href="index.html#nutricionista">
+          <span data-i18n="nav_nutritionist">Nutricionista</span>
+          <img src="assets/icons/chevron-right.svg" alt="" width="20" height="20" />
+        </a>
+        <a class="mobile-menu__link" href="index.html#como-funciona">
+          <span data-i18n="nav_how">Cómo funciona</span>
+          <img src="assets/icons/chevron-right.svg" alt="" width="20" height="20" />
+        </a>
+        <a class="mobile-menu__link" href="about-us.html">
+          <span data-i18n="nav_about">Nosotros</span>
+          <img src="assets/icons/chevron-right.svg" alt="" width="20" height="20" />
+        </a>
+        <a class="mobile-menu__link active" aria-current="page" href="contact.html">
+          <span data-i18n="nav_contact">Contacto</span>
+          <img src="assets/icons/chevron-right.svg" alt="" width="20" height="20" />
+        </a>
+      </nav>
+
+      <div class="mobile-menu__ctas">
+        <a class="btn btn--primary btn--block" href="contact.html?rol=nutricionista#formulario" data-i18n="nav_cta">Soy nutricionista</a>
+        <a class="btn btn--outline-light btn--block" href="index.html#paciente" data-i18n="nav_invited">Fui invitado por mi nutricionista →</a>
+        <a class="btn btn--outline-light btn--block" href="#iniciar-sesion" data-i18n="nav_login">Iniciar sesión</a>
+      </div>
+
+      <div class="mobile-menu__spacer"></div>
+
+      <div class="mobile-menu__contact">
+        <span class="mobile-menu__contact-label" data-i18n="menu_contact">CONTACTO</span>
+        <a class="mobile-menu__contact-email" href="mailto:hola@healthify.app">hola@healthify.app</a>
+        <span class="mobile-menu__contact-meta" data-i18n="menu_contact_meta">+51 900 000 000 · Lun a vie 9:00 - 18:00</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <section class="page-hero contact-hero" aria-labelledby="contact-title">
+      <div class="container">
+        <span class="circle contact-hero__circle" aria-hidden="true"></span>
+
+        <div>
+          <span class="eyebrow eyebrow--lime" data-i18n="contact_eyebrow">CONTACTO</span>
+          <h1 class="page-hero__title" id="contact-title" data-i18n="contact_title">Hablemos.</h1>
+          <p class="page-hero__lead" data-i18n="contact_subtitle">¿Eres nutricionista y quieres probar Healthify con tus pacientes? ¿Tienes una duda sobre tus datos? Escríbenos y te respondemos en menos de 48 horas hábiles.</p>
+        </div>
+
+        <ul class="contact-data" role="list">
+          <li>
+            <a class="contact-data__item" href="mailto:hola@healthify.app">
+              <span class="contact-data__icon"><img src="assets/icons/mail.svg" alt="" width="20" height="20" /></span>
+              <span class="contact-data__text">
+                <span class="contact-data__label" data-i18n="contact_email_label">CORREO</span>
+                <span class="contact-data__value">hola@healthify.app</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="contact-data__item" href="tel:+51900000000">
+              <span class="contact-data__icon"><img src="assets/icons/phone.svg" alt="" width="20" height="20" /></span>
+              <span class="contact-data__text">
+                <span class="contact-data__label" data-i18n="contact_phone_label">TELÉFONO</span>
+                <span class="contact-data__value">+51 900 000 000</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <div class="contact-data__item">
+              <span class="contact-data__icon"><img src="assets/icons/clock.svg" alt="" width="20" height="20" /></span>
+              <span class="contact-data__text">
+                <span class="contact-data__label" data-i18n="contact_hours_label">HORARIO</span>
+                <span class="contact-data__value" data-i18n="contact_hours_value">Lun a vie · 9:00 - 18:00</span>
+              </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="contact-form-section" id="formulario" aria-labelledby="help-title">
+      <div class="container">
+
+        <div class="contact-options">
+          <h2 class="contact-options__title" id="help-title" data-i18n="help_title">¿Cómo podemos ayudarte?</h2>
+          <div class="contact-options__list">
+            <button class="option-card" type="button" data-role="nutricionista" aria-pressed="false">
+              <span class="option-card__title" data-i18n="opt1_title">Soy nutricionista</span>
+              <span class="option-card__desc" data-i18n="opt1_desc">Quiero conocer Healthify o solicitar acceso para mi consulta.</span>
+            </button>
+            <button class="option-card option-card--green" type="button" data-role="paciente" aria-pressed="false">
+              <span class="option-card__title" data-i18n="opt2_title">Soy paciente</span>
+              <span class="option-card__desc" data-i18n="opt2_desc">Para usar la app, pídele el código de invitación a tu nutricionista. Si ya lo tienes y algo falla, escríbenos.</span>
+            </button>
+            <button class="option-card option-card--grey" type="button" data-role="otro" aria-pressed="false">
+              <span class="option-card__title" data-i18n="opt3_title">Alianzas</span>
+              <span class="option-card__desc" data-i18n="opt3_desc">Universidades, clínicas y medios.</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h2 class="form-card__title" id="form-title" data-i18n="form_title">Escríbenos</h2>
+
+          <form class="contact-form" id="contactForm" novalidate aria-labelledby="form-title">
+            <div class="form-grid">
+              <div class="field">
+                <label class="field__label" for="contact-name" data-i18n="form_name">Nombre</label>
+                <input class="input" type="text" id="contact-name" name="nombre" autocomplete="given-name" required
+                       placeholder="Tu nombre" data-i18n-placeholder="form_name_ph" aria-describedby="err-name" />
+                <span class="field__error" id="err-name" data-i18n="err_name" aria-live="polite">Ingresa tu nombre.</span>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="contact-lastname" data-i18n="form_lastname">Apellidos</label>
+                <input class="input" type="text" id="contact-lastname" name="apellidos" autocomplete="family-name" required
+                       placeholder="Tus apellidos" data-i18n-placeholder="form_lastname_ph" aria-describedby="err-lastname" />
+                <span class="field__error" id="err-lastname" data-i18n="err_lastname" aria-live="polite">Ingresa tus apellidos.</span>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="contact-email" data-i18n="form_email">Correo electrónico</label>
+                <input class="input" type="email" id="contact-email" name="correo" autocomplete="email" required
+                       placeholder="tucorreo@ejemplo.com" data-i18n-placeholder="form_email_ph" aria-describedby="err-email" />
+                <span class="field__error" id="err-email" data-i18n="err_email" aria-live="polite">Ingresa un correo electrónico válido.</span>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="contact-phone" data-i18n="form_phone">Teléfono (opcional)</label>
+                <input class="input" type="tel" id="contact-phone" name="telefono" autocomplete="tel"
+                       placeholder="+51" data-i18n-placeholder="form_phone_ph" aria-describedby="err-phone" />
+                <span class="field__error" id="err-phone" data-i18n="err_phone" aria-live="polite">Ingresa un teléfono válido, por ejemplo +51 900 000 000.</span>
+              </div>
+
+              <fieldset class="field field--full">
+                <legend data-i18n="form_role">Soy…</legend>
+                <div class="role-chips">
+                  <label class="role-chip">
+                    <input type="radio" name="rol" value="nutricionista" checked />
+                    <span data-i18n="form_role_nutri">Nutricionista</span>
+                  </label>
+                  <label class="role-chip">
+                    <input type="radio" name="rol" value="paciente" />
+                    <span data-i18n="form_role_patient">Paciente</span>
+                  </label>
+                  <label class="role-chip">
+                    <input type="radio" name="rol" value="otro" />
+                    <span data-i18n="form_role_other">Otro</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <div class="field field--full">
+                <label class="field__label" for="contact-message" data-i18n="form_message">Mensaje</label>
+                <textarea class="input" id="contact-message" name="mensaje" required
+                          placeholder="Cuéntanos en qué podemos ayudarte…" data-i18n-placeholder="form_message_ph" aria-describedby="err-message"></textarea>
+                <span class="field__error" id="err-message" data-i18n="err_message" aria-live="polite">Cuéntanos un poco más (mínimo 20 caracteres).</span>
+              </div>
+
+              <div class="consent-wrap field--full">
+                <label class="consent">
+                  <input type="checkbox" id="contact-consent" name="consentimiento" required aria-describedby="err-consent" />
+                  <span data-i18n="form_consent" data-i18n-html>Acepto el <a href="terms.html#privacidad">Aviso de privacidad</a> y el tratamiento de mis datos para responder este mensaje.</span>
+                </label>
+                <span class="field__error" id="err-consent" data-i18n="err_consent" aria-live="polite">Debes aceptar el Aviso de privacidad para continuar.</span>
+              </div>
+            </div>
+
+            <button class="btn btn--primary contact-form__submit" type="submit" data-i18n="form_submit">Enviar mensaje</button>
+            <p class="form-success" id="formSuccess" role="status" data-i18n="form_success">¡Gracias! Recibimos tu mensaje y te responderemos en menos de 48 horas hábiles.</p>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__main">
+
+        <div class="footer__brand">
+          <a class="brand" href="index.html" aria-label="Healthify, ir al inicio" data-i18n-aria="nav_home_aria">
+            <img class="brand__logo" src="assets/images/logo.webp" alt="" width="44" height="39" />
+            <span aria-hidden="true">health<span class="brand__accent">ify</span></span>
+          </a>
+          <p class="footer__tagline" data-i18n="footer_tagline">Herramienta clínica para nutricionista y paciente. Captura la información entre consultas, sin reemplazar el expediente clínico.</p>
+        </div>
+
+        <nav class="footer__col" aria-labelledby="footer-nav-title">
+          <h2 id="footer-nav-title" data-i18n="footer_nav">NAVEGACIÓN</h2>
+          <ul role="list">
+            <li><a href="index.html" data-i18n="footer_home">Inicio</a></li>
+            <li><a href="index.html#como-funciona" data-i18n="nav_how">Cómo funciona</a></li>
+            <li><a href="about-us.html" data-i18n="nav_about">Nosotros</a></li>
+            <li><a href="contact.html" data-i18n="nav_contact">Contacto</a></li>
+            <li><a href="#iniciar-sesion" data-i18n="nav_login">Iniciar sesión</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer__col" aria-labelledby="footer-legal-title">
+          <h2 id="footer-legal-title" data-i18n="footer_legal">LEGAL</h2>
+          <ul role="list">
+            <li><a href="terms.html" data-i18n="footer_terms">Términos y condiciones</a></li>
+            <li><a href="terms.html#privacidad" data-i18n="footer_privacy">Aviso de privacidad</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__col">
+          <h2 id="footer-social-title" data-i18n="footer_social">REDES</h2>
+          <ul role="list" aria-labelledby="footer-social-title">
+            <li>
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                Instagram <img src="assets/icons/external.svg" alt="" width="11" height="11" />
+                <span class="sr-only" data-i18n="new_tab">(se abre en una pestaña nueva)</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                Facebook <img src="assets/icons/external.svg" alt="" width="11" height="11" />
+                <span class="sr-only" data-i18n="new_tab">(se abre en una pestaña nueva)</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+                LinkedIn <img src="assets/icons/external.svg" alt="" width="11" height="11" />
+                <span class="sr-only" data-i18n="new_tab">(se abre en una pestaña nueva)</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <h2 id="footer-contact-title" data-i18n="footer_contact">CONTACTO</h2>
+          <ul role="list" aria-labelledby="footer-contact-title">
+            <li><a href="mailto:hola@healthify.app">hola@healthify.app</a></li>
+            <li><a href="tel:+51900000000">+51 900 000 000</a></li>
+            <li class="is-muted" data-i18n="footer_hours">Lun a vie · 9:00 - 18:00</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy" data-i18n="footer_copy">© 2026 Healthify. Todos los derechos reservados.</p>
+        <label class="lang-picker">
+          <span data-i18n="footer_lang">Idioma:</span>
+          <select class="lang-select" aria-label="Seleccionar idioma" data-i18n-aria="lang_select_aria">
+            <option value="es" lang="es">Español</option>
+            <option value="en" lang="en">English</option>
+          </select>
+        </label>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
