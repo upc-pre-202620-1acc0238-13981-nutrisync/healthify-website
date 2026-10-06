@@ -1,3 +1,379 @@
+    <section class="patient showcase snap-section" id="paciente" data-showcase aria-labelledby="patient-title">
+      <div class="showcase__sticky">
+        <div class="container showcase__inner">
+
+          <div class="showcase__visual-slot">
+            <div class="showcase__visual showcase__visual--card" aria-hidden="true">
+              <div class="showcase__screens">
+                <img class="showcase__screen is-active" data-visual="0" src="assets/images/feature-photo.webp" width="339" height="200" alt="" />
+                <img class="showcase__screen" data-visual="1" src="assets/images/feature-manual.webp" width="339" height="200" alt="" loading="lazy" />
+                <img class="showcase__screen" data-visual="2" src="assets/images/feature-inplan.webp" width="339" height="200" alt="" loading="lazy" />
+                <img class="showcase__screen" data-visual="3" src="assets/images/feature-trend.webp" width="339" height="200" alt="" loading="lazy" />
+                <img class="showcase__screen" data-visual="4" src="assets/images/feature-offline.webp" width="339" height="200" alt="" loading="lazy" />
+                <img class="showcase__screen" data-visual="5" src="assets/images/feature-record.webp" width="339" height="200" alt="" loading="lazy" />
+                <img class="showcase__screen" data-visual="6" src="assets/images/feature-ideas.webp" width="339" height="200" alt="" loading="lazy" />
+                <img class="showcase__screen" data-visual="7" src="assets/images/feature-week.webp" width="339" height="200" alt="" loading="lazy" />
+                <img class="showcase__screen" data-visual="8" src="assets/images/feature-plan.webp" width="339" height="200" alt="" loading="lazy" />
+                <img class="showcase__screen" data-visual="9" src="assets/images/feature-prepare.webp" width="339" height="200" alt="" loading="lazy" />
+              </div>
+              <div class="showcase__progress">
+                <span class="showcase__count"><span data-showcase-count>01</span> / 10</span>
+                <span class="showcase__dots"><i class="is-active"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__body">
+            <span class="eyebrow" data-i18n="patient_eyebrow">PARA EL PACIENTE</span>
+            <h2 class="showcase__title" id="patient-title" data-i18n="patient_title">Registrar en el momento, ver el progreso sin presión</h2>
+
+            <div class="showcase__list">
+              <p class="showcase__group" data-i18n="patient_group1">REGISTRAR</p>
+              <div class="sc-item is-active" data-visual="0">
+                <h3><button class="sc-item__head" type="button" aria-expanded="true" aria-controls="pf1-panel" id="pf1-head">
+                  <span class="sc-item__num" aria-hidden="true">01</span>
+                  <span class="sc-item__title" data-i18n="pf1_title">Registro por foto</span>
+                  <svg class="sc-item__chevron" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button></h3>
+                <div class="sc-item__panel" id="pf1-panel" role="region" aria-labelledby="pf1-head"><div class="sc-item__panel-inner">
+                  <div class="sc-item__visual-slot"></div>
+                  <span class="chip-tag" data-i18n="pf1_tag">FOTO</span>
+                  <p data-i18n="pf1_desc">Una foto del plato basta. La app propone una estimación de porción con su nivel de confianza; el paciente la confirma o la corrige.</p>
+                  <span class="sr-only" data-i18n="pf1_alt">Estimación de porción a partir de la foto de una ensalada con pollo, con 82% de confianza</span>
+                </div></div>
+              </div>
+              <div class="sc-item" data-visual="1">
+                <h3><button class="sc-item__head" type="button" aria-expanded="false" aria-controls="pf2-panel" id="pf2-head">
+                  <span class="sc-item__num" aria-hidden="true">02</span>
+                  <span class="sc-item__title" data-i18n="pf2_title">Registro manual</span>
+                  <svg class="sc-item__chevron" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button></h3>
+                <div class="sc-item__panel" id="pf2-panel" role="region" aria-labelledby="pf2-head"><div class="sc-item__panel-inner">
+                  <div class="sc-item__visual-slot"></div>
+                  <span class="chip-tag chip-tag--orange" data-i18n="pf2_tag">A MANO</span>
+                  <p data-i18n="pf2_desc">Cuando la foto no aplica, se busca el alimento en el catálogo guardado en el teléfono. Se puede registrar hasta 48 h hacia atrás.</p>
+                  <span class="sr-only" data-i18n="pf2_alt">Búsqueda de "quinua" en el catálogo de alimentos con tres resultados</span>
+                </div></div>
+              </div>
+              <div class="sc-item" data-visual="2">
+                <h3><button class="sc-item__head" type="button" aria-expanded="false" aria-controls="pf3-panel" id="pf3-head">
+                  <span class="sc-item__num" aria-hidden="true">03</span>
+                  <span class="sc-item__title" data-i18n="pf3_title">¿Estaba en tu plan?</span>
+                  <svg class="sc-item__chevron" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button></h3>
+                <div class="sc-item__panel" id="pf3-panel" role="region" aria-labelledby="pf3-head"><div class="sc-item__panel-inner">
+                  <div class="sc-item__visual-slot"></div>
+                  <span class="chip-tag" data-i18n="pf3_tag">UN TOQUE</span>
+                  <p data-i18n="pf3_desc">Al registrar, el paciente marca si la comida estaba en su plan. Si elige «No», queda como fuera del plan, sin pedir explicaciones, y cuenta igual en su registro.</p>
+                  <span class="sr-only" data-i18n="pf3_alt">Pregunta "¿Esta comida estaba en tu plan?" con las opciones Sí y No</span>
+                </div></div>
+              </div>
+              <div class="sc-item" data-visual="6">
+                <h3><button class="sc-item__head" type="button" aria-expanded="false" aria-controls="pf4-panel" id="pf4-head">
+                  <span class="sc-item__num" aria-hidden="true">04</span>
+                  <span class="sc-item__title" data-i18n="pf7_title">Ideas para hoy con IA</span>
+                  <svg class="sc-item__chevron" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button></h3>
+                <div class="sc-item__panel" id="pf4-panel" role="region" aria-labelledby="pf4-head"><div class="sc-item__panel-inner">
+                  <div class="sc-item__visual-slot"></div>
+                  <span class="chip-tag chip-tag--orange" data-i18n="pf7_tag">IA</span>
+                  <p data-i18n="pf7_desc">Ideas de comidas que caben en lo que le queda del día y respetan sus restricciones. No reemplazan las indicaciones del nutricionista.</p>
+                  <span class="sr-only" data-i18n="pf7_alt">Tres ideas de comidas generadas con IA, con sus calorías y proteínas</span>
+                </div></div>
+              </div>
+              <p class="showcase__group" data-i18n="patient_group2">VER PROGRESO</p>
+              <div class="sc-item" data-visual="3">
+                <h3><button class="sc-item__head" type="button" aria-expanded="false" aria-controls="pf5-panel" id="pf5-head">
+                  <span class="sc-item__num" aria-hidden="true">05</span>
+                  <span class="sc-item__title" data-i18n="pf4_title">Autopesaje como tendencia</span>
+                  <svg class="sc-item__chevron" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button></h3>
+                <div class="sc-item__panel" id="pf5-panel" role="region" aria-labelledby="pf5-head"><div class="sc-item__panel-inner">
+                  <div class="sc-item__visual-slot"></div>
+                  <span class="chip-tag" data-i18n="pf4_tag">PROGRESO</span>
+                  <p data-i18n="pf4_desc">El peso del día no se muestra como cifra protagonista. Lo que se ve es la línea: hacia dónde va.</p>
+                  <span class="sr-only" data-i18n="pf4_alt">Gráfico de tendencia de peso de 30 días que muestra una línea descendente</span>
+                </div></div>
+              </div>
+              <div class="sc-item" data-visual="7">
+                <h3><button class="sc-item__head" type="button" aria-expanded="false" aria-controls="pf6-panel" id="pf6-head">
+                  <span class="sc-item__num" aria-hidden="true">06</span>
+                  <span class="sc-item__title" data-i18n="pf8_title">Tu semana con IA</span>
+                  <svg class="sc-item__chevron" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button></h3>
+                <div class="sc-item__panel" id="pf6-panel" role="region" aria-labelledby="pf6-head"><div class="sc-item__panel-inner">
+                  <div class="sc-item__visual-slot"></div>
+                  <span class="chip-tag chip-tag--orange" data-i18n="pf8_tag">IA</span>
+                  <p data-i18n="pf8_desc">Un resumen semanal de lo que salió bien y en qué fijarse, generado a partir del diario. Puede equivocarse y se comenta en consulta.</p>
+                  <span class="sr-only" data-i18n="pf8_alt">Resumen semanal con IA: lo que salió bien y en qué fijarse</span>
+                </div></div>
+              </div>
+              <div class="sc-item" data-visual="4">
+                <h3><button class="sc-item__head" type="button" aria-expanded="false" aria-controls="pf7-panel" id="pf7-head">
+                  <span class="sc-item__num" aria-hidden="true">07</span>
+                  <span class="sc-item__title" data-i18n="pf5_title">Funciona sin señal</span>
+                  <svg class="sc-item__chevron" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button></h3>
+                <div class="sc-item__panel" id="pf7-panel" role="region" aria-labelledby="pf7-head"><div class="sc-item__panel-inner">
+                  <div class="sc-item__visual-slot"></div>
+                  <span class="chip-tag" data-i18n="pf5_tag">OFFLINE</span>
+                  <p data-i18n="pf5_desc">Se registra igual sin conexión; la app sincroniza en cuanto vuelve el internet.</p>
+                  <span class="sr-only" data-i18n="pf5_alt">Lista de registros pendientes de enviar mientras no hay conexión</span>
+                </div></div>
+              </div>
+              <div class="sc-item" data-visual="5">
+                <h3><button class="sc-item__head" type="button" aria-expanded="false" aria-controls="pf8-panel" id="pf8-head">
+                  <span class="sc-item__num" aria-hidden="true">08</span>
+                  <span class="sc-item__title" data-i18n="pf6_title">Expediente unificado</span>
+                  <svg class="sc-item__chevron" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button></h3>
+                <div class="sc-item__panel" id="pf8-panel" role="region" aria-labelledby="pf8-head"><div class="sc-item__panel-inner">
+                  <div class="sc-item__visual-slot"></div>
+                  <span class="chip-tag chip-tag--orange" data-i18n="pf6_tag">EXPEDIENTE</span>
+                  <p data-i18n="pf6_desc">Registros, tendencia y metas vigentes en un solo lugar. El plan clínico completo lo maneja el profesional.</p>
+                  <span class="sr-only" data-i18n="pf6_alt">Resumen con metas vigentes, tendencia de peso y registros de la semana</span>
+                </div></div>
+              </div>
+              <p class="showcase__group" data-i18n="patient_group3">TU CONSULTA</p>
+              <div class="sc-item" data-visual="8">
+                <h3><button class="sc-item__head" type="button" aria-expanded="false" aria-controls="pf9-panel" id="pf9-head">
+                  <span class="sc-item__num" aria-hidden="true">09</span>
+                  <span class="sc-item__title" data-i18n="pf9_title">Mi plan y sus versiones</span>
+                  <svg class="sc-item__chevron" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button></h3>
+                <div class="sc-item__panel" id="pf9-panel" role="region" aria-labelledby="pf9-head"><div class="sc-item__panel-inner">
+                  <div class="sc-item__visual-slot"></div>
+                  <span class="chip-tag" data-i18n="pf9_tag">PLAN</span>
+                  <p data-i18n="pf9_desc">El paciente ve su plan vigente y las versiones anteriores. Solo el nutricionista puede cambiarlo; si ajusta las metas, la app lo avisa.</p>
+                  <span class="sr-only" data-i18n="pf9_alt">Lista de versiones del plan, con la versión 3 marcada como vigente</span>
+                </div></div>
+              </div>
+              <div class="sc-item" data-visual="9">
+                <h3><button class="sc-item__head" type="button" aria-expanded="false" aria-controls="pf10-panel" id="pf10-head">
+                  <span class="sc-item__num" aria-hidden="true">10</span>
+                  <span class="sc-item__title" data-i18n="pf10_title">Prepárate y cuéntale cómo te fue</span>
+                  <svg class="sc-item__chevron" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button></h3>
+                <div class="sc-item__panel" id="pf10-panel" role="region" aria-labelledby="pf10-head"><div class="sc-item__panel-inner">
+                  <div class="sc-item__visual-slot"></div>
+                  <span class="chip-tag chip-tag--orange" data-i18n="pf10_tag">CONSULTA</span>
+                  <p data-i18n="pf10_desc">Antes de la cita, el paciente ve cómo prepararse y le cuenta a su nutricionista cómo le fue, con preguntas sugeridas.</p>
+                  <span class="sr-only" data-i18n="pf10_alt">Indicaciones para preparar la consulta: ir en ayunas, usar ropa ligera y llevar análisis de sangre</span>
+                </div></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="nutri showcase showcase--dark snap-section" id="nutricionista" data-showcase aria-labelledby="nutri-title">
+      <div class="showcase__sticky">
+        <div class="container showcase__inner">
+
+          <div class="showcase__visual-slot">
+            <div class="showcase__visual" aria-hidden="true">
+              <div class="mock is-active" data-visual="0">
+                <div class="mock__head">
+                  <span class="mock__avatar">AF</span>
+                  <span class="mock__who"><strong>Ana Flores</strong><small data-i18n="mock_linked">Vinculada por QR · código 4F7-K2</small></span>
+                  <span class="mock__qr"></span>
+                </div>
+                <span class="mock__label" data-i18n="mock_anthro">ANTROPOMETRÍA</span>
+                <div class="mock__stats">
+                  <span><strong>74,2 kg</strong><small data-i18n="mock_weight">Peso</small></span>
+                  <span><strong>1,68 m</strong><small data-i18n="mock_height">Talla</small></span>
+                  <span><strong>26,3</strong><small data-i18n="mock_bmi">IMC</small></span>
+                  <span><strong>88 cm</strong><small data-i18n="mock_waist">Cintura</small></span>
+                </div>
+                <span class="mock__label" data-i18n="mock_dx_label">DIAGNÓSTICO · SUGERIDO POR IA</span>
+                <div class="mock__box mock__box--lime">
+                  <strong data-i18n="mock_dx">Sobrepeso grado I</strong>
+                  <small data-i18n="mock_dx_basis">Fundamento: IMC 26,3 y cintura de 88 cm, riesgo cardiometabólico aumentado. La IA lo sugirió y usted lo confirmó en consulta.</small>
+                </div>
+                <span class="mock__label" data-i18n="mock_goals">METAS</span>
+                <div class="mock__box">
+                  <div class="mock__row"><small data-i18n="mock_goal_params">Mifflin-St Jeor · déficit 500 kcal · proteína 1,6 g/kg</small><strong data-i18n="mock_kcal">1 796 kcal/día</strong></div>
+                  <span class="chip-tag chip-tag--lime" data-i18n="mock_accepted">ACEPTADO POR USTED</span>
+                </div>
+              </div>
+              <div class="mock" data-visual="1">
+                <div class="mock__head">
+                  <span class="mock__who"><strong class="mock__title" data-i18n="mock_panel">Seguimiento</strong><small data-i18n="mock_panel_sub">Ana Flores · últimas 4 semanas</small></span>
+                  <span class="chip-tag chip-tag--lime">PLAN V3</span>
+                </div>
+                <div class="mock__chart">
+                  <div class="mock__chart-head"><small data-i18n="mock_trend">Tendencia · 4 semanas</small><strong data-i18n="mock_down">Bajando</strong></div>
+                  <svg viewBox="0 0 300 90" preserveAspectRatio="none">
+                    <path class="mock__grid" d="M0 20H300M0 45H300M0 70H300" />
+                    <path class="mock__line" d="M0 22 C30 12 55 20 80 30 S120 42 140 38 S180 34 200 50 S250 72 300 80" />
+                    <circle cx="18" cy="16" r="3"/><circle cx="48" cy="46" r="3"/><circle cx="78" cy="34" r="3"/><circle cx="128" cy="28" r="3"/><circle cx="158" cy="56" r="3"/><circle cx="228" cy="66" r="3"/><circle cx="258" cy="78" r="3"/>
+                  </svg>
+                </div>
+                <div class="mock__stats mock__stats--3">
+                  <span><strong>5 de 7</strong><small data-i18n="mock_consistency">Días dentro de metas</small></span>
+                  <span><strong>6 de 7</strong><small data-i18n="mock_entries">Días con registro</small></span>
+                  <span><strong>−0,3 kg/sem</strong><small data-i18n="mock_trend30">Tendencia de peso</small></span>
+                </div>
+                <div class="mock__box mock__row mock__row--start">
+                  <span class="chip-tag chip-tag--orange" data-i18n="mock_diary_tag">RESUMEN IA</span>
+                  <small data-i18n="mock_diary">Cumple sus metas casi todos los días. El jueves y el sábado registró menos energía de la indicada, sobre todo en la cena.</small>
+                </div>
+              </div>
+              <div class="mock" data-visual="2">
+                <div class="mock__head">
+                  <span class="mock__who"><strong class="mock__title" data-i18n="mock_inbox">Bandeja de revisión</strong><small data-i18n="mock_inbox_sub">Señales entre consultas</small></span>
+                  <span class="chip-tag chip-tag--orange" data-i18n="mock_inbox_new">1 NUEVA</span>
+                </div>
+                <div class="mock__box mock__box--lime">
+                  <strong data-i18n="mock_signal">Ana Flores · desviación sostenida</strong>
+                  <small data-i18n="mock_signal_date">Recibido el 8 sept. 2026</small>
+                </div>
+                <span class="mock__label" data-i18n="mock_ai_plan">PLAN PROPUESTO POR IA</span>
+                <div class="mock__box">
+                  <div class="mock__row"><small data-i18n="mock_ai_energy">Energía diaria</small><strong>1 796 → 1 650 kcal</strong></div>
+                  <div class="mock__row mock__row--start"><span class="chip-tag chip-tag--lime" data-i18n="mock_ai_new_tag">NUEVA</span><small data-i18n="mock_ai_new">Cena con proteína y vegetales</small></div>
+                </div>
+                <div class="mock__actions"><span class="mock__btn" data-i18n="mock_adjust">Ajustar</span><span class="mock__btn mock__btn--primary" data-i18n="mock_resolve">Resolver</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase__body">
+            <span class="eyebrow eyebrow--lime" data-i18n="nutri_eyebrow">PARA EL NUTRICIONISTA</span>
+            <h2 class="showcase__title" id="nutri-title" data-i18n="nutri_title">La señal notifica, usted decide</h2>
+
+            <div class="showcase__list">
+              <p class="showcase__group" data-i18n="nutri_group1">EN CONSULTA</p>
+              <div class="sc-item is-active" data-visual="0">
+                <h3><button class="sc-item__head" type="button" aria-expanded="true" aria-controls="nf1-panel" id="nf1-head">
+                  <span class="sc-item__num" aria-hidden="true">01</span>
+                  <span class="sc-item__title" data-i18n="nf1_title">Vinculación por QR</span>
+                  <svg class="sc-item__chevron" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button></h3>
+                <div class="sc-item__panel" id="nf1-panel" role="region" aria-labelledby="nf1-head"><div class="sc-item__panel-inner">
+                  <div class="sc-item__visual-slot"></div>
+                  <p data-i18n="nf1_desc">Se genera una invitación QR en consulta y se gestiona el vínculo con el paciente. Sin ese código, el paciente no tiene acceso.</p>
+                </div></div>
+              </div>
+              <div class="sc-item" data-visual="0">
+                <h3><button class="sc-item__head" type="button" aria-expanded="false" aria-controls="nf2-panel" id="nf2-head">
+                  <span class="sc-item__num" aria-hidden="true">02</span>
+                  <span class="sc-item__title" data-i18n="nf2_title">Datos base y medición de hoy</span>
+                  <svg class="sc-item__chevron" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button></h3>
+                <div class="sc-item__panel" id="nf2-panel" role="region" aria-labelledby="nf2-head"><div class="sc-item__panel-inner">
+                  <div class="sc-item__visual-slot"></div>
+                  <p data-i18n="nf2_desc">Los datos base se registran una sola vez. En cada consulta solo se mide lo que cambia y se ve lo que el paciente contó antes de la cita.</p>
+                </div></div>
+              </div>
+              <div class="sc-item" data-visual="0">
+                <h3><button class="sc-item__head" type="button" aria-expanded="false" aria-controls="nf3-panel" id="nf3-head">
+                  <span class="sc-item__num" aria-hidden="true">03</span>
+                  <span class="sc-item__title" data-i18n="nf3_title">Diagnóstico con apoyo de IA</span>
+                  <svg class="sc-item__chevron" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button></h3>
+                <div class="sc-item__panel" id="nf3-panel" role="region" aria-labelledby="nf3-head"><div class="sc-item__panel-inner">
+                  <div class="sc-item__visual-slot"></div>
+                  <p data-i18n="nf3_desc">La IA sugiere un diagnóstico con su fundamento a partir de la medición y la historia. Usted lo usa, lo cambia o elige otro.</p>
+                </div></div>
+              </div>
+              <div class="sc-item" data-visual="0">
+                <h3><button class="sc-item__head" type="button" aria-expanded="false" aria-controls="nf4-panel" id="nf4-head">
+                  <span class="sc-item__num" aria-hidden="true">04</span>
+                  <span class="sc-item__title" data-i18n="nf4_title">Metas calculadas y editables</span>
+                  <svg class="sc-item__chevron" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button></h3>
+                <div class="sc-item__panel" id="nf4-panel" role="region" aria-labelledby="nf4-head"><div class="sc-item__panel-inner">
+                  <div class="sc-item__visual-slot"></div>
+                  <p data-i18n="nf4_desc">Se calculan con Mifflin-St Jeor y los datos de hoy. Los parámetros están a la vista y puede escribir sus propios valores.</p>
+                </div></div>
+              </div>
+              <div class="sc-item" data-visual="0">
+                <h3><button class="sc-item__head" type="button" aria-expanded="false" aria-controls="nf5-panel" id="nf5-head">
+                  <span class="sc-item__num" aria-hidden="true">05</span>
+                  <span class="sc-item__title" data-i18n="nf5_title">Indicaciones y plan versionado</span>
+                  <svg class="sc-item__chevron" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button></h3>
+                <div class="sc-item__panel" id="nf5-panel" role="region" aria-labelledby="nf5-head"><div class="sc-item__panel-inner">
+                  <div class="sc-item__visual-slot"></div>
+                  <p data-i18n="nf5_desc">Escribe las indicaciones y publica el plan. Cada publicación crea una versión nueva que el paciente ve al instante.</p>
+                </div></div>
+              </div>
+              <p class="showcase__group" data-i18n="nutri_group2">ENTRE CONSULTAS</p>
+              <div class="sc-item" data-visual="2">
+                <h3><button class="sc-item__head" type="button" aria-expanded="false" aria-controls="nf6-panel" id="nf6-head">
+                  <span class="sc-item__num" aria-hidden="true">06</span>
+                  <span class="sc-item__title" data-i18n="nf6_title">Bandeja de revisión</span>
+                  <svg class="sc-item__chevron" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button></h3>
+                <div class="sc-item__panel" id="nf6-panel" role="region" aria-labelledby="nf6-head"><div class="sc-item__panel-inner">
+                  <div class="sc-item__visual-slot"></div>
+                  <p data-i18n="nf6_desc">Las señales entre consultas llegan a una bandeja: desviación sostenida o señales de consistencia del registro.</p>
+                </div></div>
+              </div>
+              <div class="sc-item" data-visual="2">
+                <h3><button class="sc-item__head" type="button" aria-expanded="false" aria-controls="nf7-panel" id="nf7-head">
+                  <span class="sc-item__num" aria-hidden="true">07</span>
+                  <span class="sc-item__title" data-i18n="nf7_title">Ajuste con plan propuesto por IA</span>
+                  <svg class="sc-item__chevron" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button></h3>
+                <div class="sc-item__panel" id="nf7-panel" role="region" aria-labelledby="nf7-head"><div class="sc-item__panel-inner">
+                  <div class="sc-item__visual-slot"></div>
+                  <p data-i18n="nf7_desc">Ante una señal, la IA propone un ajuste. Usted lo revisa, lo ajusta y lo asigna, o resuelve la señal sin cambios.</p>
+                </div></div>
+              </div>
+              <div class="sc-item" data-visual="1">
+                <h3><button class="sc-item__head" type="button" aria-expanded="false" aria-controls="nf8-panel" id="nf8-head">
+                  <span class="sc-item__num" aria-hidden="true">08</span>
+                  <span class="sc-item__title" data-i18n="nf8_title">Seguimiento en solo lectura</span>
+                  <svg class="sc-item__chevron" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button></h3>
+                <div class="sc-item__panel" id="nf8-panel" role="region" aria-labelledby="nf8-head"><div class="sc-item__panel-inner">
+                  <div class="sc-item__visual-slot"></div>
+                  <p data-i18n="nf8_desc">Tendencia de peso, cumplimiento y diario del paciente, con un resumen generado con IA. Nunca puede escribir en el diario.</p>
+                </div></div>
+              </div>
+              <div class="sc-item" data-visual="1">
+                <h3><button class="sc-item__head" type="button" aria-expanded="false" aria-controls="nf9-panel" id="nf9-head">
+                  <span class="sc-item__num" aria-hidden="true">09</span>
+                  <span class="sc-item__title" data-i18n="nf9_title">Agenda de consultas</span>
+                  <svg class="sc-item__chevron" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button></h3>
+                <div class="sc-item__panel" id="nf9-panel" role="region" aria-labelledby="nf9-head"><div class="sc-item__panel-inner">
+                  <div class="sc-item__visual-slot"></div>
+                  <p data-i18n="nf9_desc">Agenda la próxima consulta desde la ficha del paciente y ve todas sus citas en una sola vista.</p>
+                </div></div>
+              </div>
+              <div class="sc-item" data-visual="1">
+                <h3><button class="sc-item__head" type="button" aria-expanded="false" aria-controls="nf10-panel" id="nf10-head">
+                  <span class="sc-item__num" aria-hidden="true">10</span>
+                  <span class="sc-item__title" data-i18n="nf10_title">Derivaciones y alta clínica</span>
+                  <svg class="sc-item__chevron" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button></h3>
+                <div class="sc-item__panel" id="nf10-panel" role="region" aria-labelledby="nf10-head"><div class="sc-item__panel-inner">
+                  <div class="sc-item__visual-slot"></div>
+                  <p data-i18n="nf10_desc">Registra derivaciones a otros profesionales y da el alta clínica cuando el tratamiento termina.</p>
+                </div></div>
+              </div>
+              <div class="sc-item" data-visual="1">
+                <h3><button class="sc-item__head" type="button" aria-expanded="false" aria-controls="nf11-panel" id="nf11-head">
+                  <span class="sc-item__num" aria-hidden="true">11</span>
+                  <span class="sc-item__title" data-i18n="nf11_title">Catálogo de alimentos locales</span>
+                  <svg class="sc-item__chevron" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button></h3>
+                <div class="sc-item__panel" id="nf11-panel" role="region" aria-labelledby="nf11-head"><div class="sc-item__panel-inner">
+                  <div class="sc-item__visual-slot"></div>
+                  <p data-i18n="nf11_desc">Busca alimentos y agrega los locales que falten, para que el registro del paciente sea más preciso.</p>
+                </div></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
     <section class="how snap-section" id="como-funciona" aria-labelledby="how-title">
       <div class="container">
         <h2 class="section-heading" id="how-title" data-i18n="how_title">Cómo funciona</h2>
