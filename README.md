@@ -8,48 +8,40 @@ Static landing page for Healthify, a clinical tool that connects nutritionists a
 
 | File | Content |
 | :--- | :--- |
-| `index.html` | Home: hero, problem, patient features, nutritionist features, how it works, FAQ |
-| `about-us.html` | About us: story, mission & vision, values, team, FAQ |
-| `contact.html` | Contact: contact details and form |
-| `terms.html` | Terms and conditions (includes the privacy section `#privacidad`) |
+| `index.html` | Home: hero, value, the visit step by step, between visits, for nutritionists, for patients, social proof, final CTA |
+| `about-us.html` | About us: hero, story, mission & vision, values, team, FAQ with filters |
+| `contact.html` | Contact: case selector (radios), form with validation and error summary, other contact details |
+| `terms.html` | Terms and conditions, sticky index on desktop and a `<details>` index on mobile (`#privacidad` is section 7) |
 
 ## Structure
 
 ```
 ├── index.html / about-us.html / contact.html / terms.html
-├── css/styles.css        # Design tokens (Figma) + all styles, responsive at 1100 / 900 / 768 px
+├── css/styles.css        # Design tokens (app colors, Figma type scale, radii) + all styles. Mobile first; layouts at 1024 px, header at 1200 px
 ├── js/i18n.js            # Translations (es-419 default, en-US) and i18n engine
-├── js/main.js            # Mobile menu, FAQ accordion + filters, showcases (patient / nutritionist), contact form, terms index
+├── js/main.js            # Language switch, mobile menu (focus trap, Esc), steps carousel, FAQ accordion + filters, terms index, contact form
 └── assets/
-    ├── images/           # Logo, app screens, illustrations, og-image, favicon
-    └── icons/            # SVG icons exported from Figma
+    ├── images/           # Logo (color and white), og-image, favicon
+    │   └── app/          # Real app screens exported from Figma ("Mockup" page) as WebP, 720 × 1600
+    │       └── en/       # The same screens in English, same file names
+    └── icons/            # SVG icons
 ```
 
-## Scroll behaviour
+## Layout
 
-- Pages with `body.snap-page` scroll section by section on desktop (≥ 1101 px wide and ≥ 640 px tall): each wheel /
-  trackpad gesture or ↓ / ↑ / PageDown / PageUp / Space moves to the next or previous section (`initPageScroll()` in
-  `js/main.js`). Every `.snap-section` fills the screen. Remove the class to turn it off.
-- The patient and nutritionist sections (`[data-showcase]`) pin their content while the list advances with the scroll
-  on desktop; on tablet / mobile they become an accordion (see `initShowcases()` in `js/main.js`).
-- `terms.html` shows one clause per screen with a fixed index on desktop, and a regular list on mobile.
+- On desktop (≥ 1024 px) every Home and About section is at least one screen tall (`--screen: max(100svh, 900px)`), so each one fits in 900 px at 1440 × 900. Nothing uses a fixed height that could cut text.
+- "The visit, step by step" is a 4-column grid on desktop and a scroll-snap carousel on mobile with a 1–4 step indicator.
+- Focus ring: 2 px with 2 px offset, `#3B6E23` on light backgrounds and `#B8E07A` on dark ones (`.on-dark`). `prefers-reduced-motion` is respected.
+- 
+## Testimonials
 
-## Hero carousel (index.html)
-
-Four slides: nutritionists, patients, product video and team video. Arrows, dots, swipe, ← / → and a
-7-second autoplay (paused on hover over the content, with keyboard focus, off screen, or with reduced motion;
-it stops once a video plays). To publish a video, put its YouTube ID in `data-youtube-id` on the matching
-`.hero__video` element; the player only loads when the user presses play.
+The two quotes on Home are a draft not yet confirmed by their authors. They live only in `js/i18n.js` (`quote_*` keys, ES and EN).
 
 ## Internationalization
 
 Every translatable element uses `data-i18n="key"` (text), `data-i18n-html` (text with markup),
 `data-i18n-placeholder`, `data-i18n-aria` or `data-i18n-alt`. Strings live in `js/i18n.js`
-under `translations.es` and `translations.en`. The language selector is the ES / EN switch in the navbar (plus the one in the footer) and the
-choice is saved in `localStorage` (`healthify_lang`).
-
-To add a language, add a new object to `translations` and a new `<option>` to the `.lang-select`
-selectors.
+under `translations.es` and `translations.en`. The language selector is the ES / EN switch in the header (and in the mobile menu); the choice is saved in `localStorage` (`healthify_lang`).
 
 ## Run locally
 
