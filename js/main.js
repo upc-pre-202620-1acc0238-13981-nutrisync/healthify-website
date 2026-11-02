@@ -13,6 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
   initTermsToc();
   initContactForm();
   initReveal();
+  initCountUp();
+  initStepsLine();
+  initScreenRotation();
+  initProofChat();
+  initButtonShine();
 });
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -27,7 +32,17 @@ function initLangSwitch() {
     buttons.forEach(btn => btn.setAttribute('aria-pressed', String(btn.dataset.lang === lang)));
   }
 
-  buttons.forEach(btn => btn.addEventListener('click', () => I18n.setLang(btn.dataset.lang)));
+  // El cambio de idioma se funde en lugar de saltar (View Transitions, donde exista)
+  function switchLang(lang) {
+    if (lang === I18n.getLang()) return;
+    if (!document.startViewTransition || reducedMotion.matches) { I18n.setLang(lang); return; }
+    const root = document.documentElement;
+    root.classList.add('vt-lang');
+    document.startViewTransition(() => I18n.setLang(lang)).finished
+      .finally(() => root.classList.remove('vt-lang'));
+  }
+
+  buttons.forEach(btn => btn.addEventListener('click', () => switchLang(btn.dataset.lang)));
   document.addEventListener('i18n:change', sync);
   sync();
 }
@@ -44,9 +59,18 @@ function initMenu() {
   const backdrop = document.createElement('div');
   backdrop.className = 'menu-backdrop';
   menu.before(backdrop);
-  menu.hidden = false;
 
   const isOpen = () => toggle.getAttribute('aria-expanded') === 'true';
+
+  // Cerrado, el menú queda con [hidden] (display: none). Si quedara desplazado fuera de
+  // pantalla, los navegadores móviles lo contarían como ancho extra y la página se movería de lado.
+  let hideTimer = null;
+  function hideWhenClosed() {
+    clearTimeout(hideTimer);
+    hideTimer = null;
+    if (!isOpen()) menu.hidden = true;
+  }
+  menu.addEventListener('transitionend', e => { if (e.target === menu && e.propertyName === 'transform') hideWhenClosed(); });
 
   function syncLabel() {
     toggle.setAttribute('aria-label', I18n.t(isOpen() ? 'nav_close_menu' : 'nav_open_menu'));
@@ -54,6 +78,13 @@ function initMenu() {
 
   function setMenu(open, { returnFocus = true } = {}) {
     toggle.setAttribute('aria-expanded', String(open));
+    clearTimeout(hideTimer);
+    if (open) {
+      menu.hidden = false;
+      void menu.offsetWidth; // aplica la posición cerrada antes de animar la apertura
+    } else {
+      hideTimer = setTimeout(hideWhenClosed, 400); // por si no hay transición (escritorio, sin animaciones)
+    }
     menu.classList.toggle('is-open', open);
     backdrop.classList.toggle('is-open', open);
     outside.forEach(el => { el.inert = open; });
@@ -97,6 +128,7 @@ function initHeader() {
   if (!header) return;
   const hero = document.querySelector('.hero, .about-hero');
   const IDLE_MS = 2000;
+  const COMPACT_AFTER = 160;
   let lastY = window.scrollY;
   let idle = null;
   let ticking = false;
@@ -123,6 +155,8 @@ function initHeader() {
     ticking = false;
     const y = window.scrollY;
     header.classList.toggle('is-stuck', y > 0);
+    // Compacto solo cuando su hueco original ya salió de la vista (ver .is-compact en CSS)
+    header.classList.toggle('is-compact', y > COMPACT_AFTER);
     clearTimeout(idle);
     if (!pastLimit()) {
       header.classList.remove('is-hidden');
@@ -341,7 +375,7 @@ function initReveal() {
   const selector = [
     'main > section:not(.hero):not(.about-hero) .h-section',
     '.value__note', '.stat', '.steps__lead', '.step', '.between__lead', '.between__visual', '.example',
-    '.pros__visual', '.feature', '.patients__lead', '.patients__visual', '.quote', '.criteria',
+    '.pros__visual', '.feature', '.patients__lead', '.patients__visual',
     '.cta__title', '.cta__btn', '.cta__steps li',
     '.story__title', '.story__cols > *', '.purpose__card', '.values__title', '.value-item',
     '.team__title', '.member'
@@ -365,6 +399,208 @@ function initReveal() {
   targets.forEach(el => observer.observe(el));
 }
 
+// Las cifras de la sección de valor cuentan desde 0 al entrar en pantalla.
+// El texto real queda en un span .sr-only; la cifra animada se oculta a lectores de pantalla.
+function initCountUp() {
+  if (reducedMotion.matches || !('IntersectionObserver' in window)) return;
+  const figures = [...document.querySelectorAll('.stat__figure[data-i18n]')];
+  if (!figures.length) return;
+  const NUMBER = /[−-]?\d+(?:[.,]\d+)?/;
+  const DURATION_MS = 1200;
+  const frames = new Map();
+  const done = new Set();
+
+  function parse(text) {
+    const match = text.match(NUMBER);
+    if (!match) return null;
+    const raw = match[0];
+    const sign = /^[−-]/.test(raw) ? raw[0] : '';
+    const digits = sign ? raw.slice(1) : raw;
+    const sep = (digits.match(/[.,]/) || [''])[0];
+    return {
+      before: text.slice(0, match.index),
+      after: text.slice(match.index + raw.length),
+      sign, sep,
+      decimals: sep ? digits.split(sep)[1].length : 0,
+      value: parseFloat(digits.replace(',', '.'))
+    };
+  }
+
+  function format(p, value) {
+    let num = value.toFixed(p.decimals);
+    if (p.sep) num = num.replace('.', p.sep);
+    const sign = p.sign && Number(value.toFixed(p.decimals)) !== 0 ? p.sign : '';
+    return p.before + sign + num + p.after;
+  }
+
+  const source = el => I18n.t(el.getAttribute('data-i18n'));
+
+  const labels = figures.map(el => {
+    const label = document.createElement('span');
+    label.className = 'sr-only';
+    el.before(label);
+    el.setAttribute('aria-hidden', 'true');
+    return label;
+  });
+
+  function reset() {
+    frames.forEach(id => cancelAnimationFrame(id));
+    frames.clear();
+    figures.forEach((el, i) => {
+      labels[i].textContent = source(el);
+      const p = parse(source(el));
+      if (p && !done.has(el)) el.textContent = format(p, 0);
+    });
+  }
+
+  function run(el, delay) {
+    const p = parse(source(el));
+    done.add(el);
+    if (!p) return;
+    const start = performance.now() + delay;
+    const tick = now => {
+      const t = Math.min(1, Math.max(0, (now - start) / DURATION_MS));
+      el.textContent = format(p, p.value * (1 - Math.pow(1 - t, 3)));
+      if (t < 1) frames.set(el, requestAnimationFrame(tick));
+      else frames.delete(el);
+    };
+    frames.set(el, requestAnimationFrame(tick));
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      observer.unobserve(entry.target);
+      run(entry.target, 200 + figures.indexOf(entry.target) * 120);
+    });
+  }, { threshold: 0.6 });
+
+  document.addEventListener('i18n:change', reset);
+  reset();
+  figures.forEach(el => observer.observe(el));
+}
+
+// Escritorio: la línea que une los 4 pasos se dibuja y los números se encienden en orden.
+function initStepsLine() {
+  const list = document.querySelector('[data-steps]');
+  if (!list) return;
+  if (reducedMotion.matches || !('IntersectionObserver' in window)) { list.classList.add('is-drawn'); return; }
+  const observer = new IntersectionObserver(entries => {
+    if (!entries.some(entry => entry.isIntersecting)) return;
+    observer.disconnect();
+    list.classList.add('is-drawn');
+  }, { threshold: 0.3 });
+  observer.observe(list);
+}
+
+// 06 · Para pacientes: el teléfono alterna entre pantallas mientras está a la vista.
+// Se pausa con el botón, al pasar el mouse o al enfocarlo, y no corre con movimiento reducido.
+function initScreenRotation() {
+  const phone = document.querySelector('[data-rotate]');
+  if (!phone || reducedMotion.matches || !('IntersectionObserver' in window)) return;
+  const shots = [...phone.querySelectorAll('.phone__screen')];
+  const toggle = document.querySelector('[data-rotate-toggle]');
+  if (shots.length < 2) return;
+  const INTERVAL_MS = 4000;
+  let current = 0;
+  let timer = null;
+  let inView = false;
+  let userPaused = false;
+  let holding = false;
+
+  function show(index) {
+    current = (index + shots.length) % shots.length;
+    shots.forEach((shot, i) => {
+      shot.classList.toggle('is-active', i === current);
+      if (i === current) shot.removeAttribute('aria-hidden');
+      else shot.setAttribute('aria-hidden', 'true');
+    });
+  }
+
+  function sync() {
+    clearInterval(timer);
+    timer = null;
+    if (inView && !userPaused && !holding && !document.hidden) {
+      timer = setInterval(() => show(current + 1), INTERVAL_MS);
+    }
+    if (toggle) {
+      toggle.classList.toggle('is-paused', userPaused);
+      toggle.setAttribute('aria-label', I18n.t(userPaused ? 'screens_play' : 'screens_pause'));
+    }
+  }
+
+  phone.classList.add('is-rotating');
+  show(0);
+
+  if (toggle) {
+    toggle.hidden = false;
+    toggle.addEventListener('click', () => { userPaused = !userPaused; sync(); });
+  }
+  phone.addEventListener('mouseenter', () => { holding = true; sync(); });
+  phone.addEventListener('mouseleave', () => { holding = false; sync(); });
+  new IntersectionObserver(entries => {
+    inView = entries[entries.length - 1].isIntersecting;
+    sync();
+  }, { threshold: 0.4 }).observe(phone);
+  document.addEventListener('visibilitychange', sync);
+  document.addEventListener('i18n:change', sync);
+  sync();
+}
+
+// 07 · Prueba social: las citas llegan como mensajes de chat.
+// Cada lado muestra "escribiendo…" antes de su burbuja: nutricionista → paciente → chips de confianza.
+function initProofChat() {
+  const section = document.querySelector('.proof');
+  if (!section || reducedMotion.matches || !('IntersectionObserver' in window)) return;
+  const messages = [...section.querySelectorAll('.proof__msg')];
+  if (!messages.length || messages.some(msg => !msg.querySelector('.quote'))) return;
+
+  const typings = messages.map(msg => {
+    const typing = document.createElement('span');
+    typing.className = 'proof__typing';
+    typing.setAttribute('aria-hidden', 'true');
+    typing.innerHTML = '<i></i><i></i><i></i>';
+    msg.append(typing);
+    return typing;
+  });
+  section.querySelectorAll('.proof__chip').forEach((chip, i) => chip.style.setProperty('--chip-i', i));
+  section.classList.add('is-chat');
+
+  const SEQUENCE = [
+    ['is-nutri-typing', 0], ['is-nutri', 1200],
+    ['is-patient-typing', 1800], ['is-patient', 3000],
+    ['is-trust', 3600]
+  ];
+  const observer = new IntersectionObserver(entries => {
+    if (!entries.some(entry => entry.isIntersecting)) return;
+    observer.disconnect();
+    // La burbuja "escribiendo…" ocupa el lugar donde aparecerá la cita
+    typings.forEach((typing, i) => { typing.style.top = `${messages[i].querySelector('.quote').offsetTop}px`; });
+    SEQUENCE.forEach(([state, delay]) => setTimeout(() => section.classList.add(state), delay));
+  }, { threshold: 0.35 });
+  observer.observe(section);
+}
+
+// Los botones principales dentro del contenido dejan pasar un brillo una vez al aparecer.
+function initButtonShine() {
+  if (reducedMotion.matches || !('IntersectionObserver' in window)) return;
+  const buttons = [...document.querySelectorAll('main .btn--primary')];
+  if (!buttons.length) return;
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      observer.unobserve(entry.target);
+      entry.target.classList.add('is-shine');
+    });
+  }, { threshold: 0.8 });
+  buttons.forEach(btn => {
+    btn.addEventListener('animationend', e => {
+      if (e.pseudoElement === '::after') btn.classList.remove('is-shine');
+    });
+    observer.observe(btn);
+  });
+}
+
 function initSteps() {
   const list = document.querySelector('[data-steps]');
   if (!list) return;
@@ -374,6 +610,7 @@ function initSteps() {
 
   function mark(index) {
     current = index;
+    if (dots.length > 1) dots[0].parentElement.style.setProperty('--progress', index / (dots.length - 1));
     dots.forEach((dot, i) => {
       if (i === index) dot.setAttribute('aria-current', 'step');
       else dot.removeAttribute('aria-current');
