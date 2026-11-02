@@ -247,28 +247,65 @@
         <p class="patients__lead" data-i18n="patients_lead">Registra con una foto, marca si la comida estaba en su plan y ve su peso como tendencia. Los días bajo la meta no se marcan en rojo.</p>
         <p class="invite-note" data-i18n="patients_note">¿Su paciente ya tiene la invitación? Que descargue la app, cree su cuenta como paciente y escanee el código.</p>
       </div>
-      <div class="patients__visual"><div class="phone "><img class="phone__screen" data-i18n-img src="assets/images/app/pt3.webp" width="720" height="1600" alt="Inicio del paciente: 590 kcal que le quedan hoy, la semana con 5 de 7 días registrados, cómo va hoy y la próxima consulta" data-i18n-alt="alt_pt3" loading="lazy" decoding="async" /></div></div>
+      <div class="patients__visual">
+        <!-- Rota entre tres pantallas del paciente (js/main.js · initScreenRotation). Sin JS solo se ve la primera. -->
+        <div class="phone" data-rotate>
+          <img class="phone__screen" data-i18n-img src="assets/images/app/pt3.webp" width="720" height="1600" alt="Inicio del paciente: 590 kcal que le quedan hoy, la semana con 5 de 7 días registrados, cómo va hoy y la próxima consulta" data-i18n-alt="alt_pt3" loading="lazy" decoding="async" />
+          <img class="phone__screen" data-i18n-img src="assets/images/app/pt7.webp" width="720" height="1600" alt="App del paciente: estimación propuesta para un lomo saltado de 320 g con 82 % de confianza, la pregunta «¿Estaba en tu plan?» y los botones para confirmar o ajustar los gramos" data-i18n-alt="alt_pt7" aria-hidden="true" loading="lazy" decoding="async" />
+          <img class="phone__screen" data-i18n-img src="assets/images/app/pt3m.webp" width="720" height="1600" alt="Inicio del paciente con el aviso «Tus metas cambiaron» después de que su nutricionista publicó un plan nuevo" data-i18n-alt="alt_pt3m" aria-hidden="true" loading="lazy" decoding="async" />
+        </div>
+        <button class="rotate-toggle" type="button" aria-label="Pausar el cambio de pantallas" data-rotate-toggle hidden>
+          <svg class="rotate-toggle__pause" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M5 3v10M11 3v10" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+          <svg class="rotate-toggle__play" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M5 2.8v10.4L13.2 8z" fill="currentColor"/></svg>
+        </button>
+      </div>
     </section>
 
     <section class="proof screen" aria-labelledby="proof-title">
-      <h2 class="sr-only" id="proof-title" data-i18n="proof_title">Testimonios y criterio clínico</h2>
-      <div class="container proof__grid">
-        <!-- Citas en borrador, aún sin confirmar por sus autoras. Se editan en js/i18n.js (claves quote_*). -->
-        <figure class="quote">
-          <blockquote><p data-i18n="quote_nutri_text">«Llego a la consulta de control sabiendo cómo le fue a mi paciente cada día. Ya no dependo de lo que recuerde.»</p></blockquote>
-          <figcaption data-i18n="quote_nutri_author">Tatiana Mozombite, nutricionista</figcaption>
-        </figure>
-        <figure class="quote">
-          <blockquote><p data-i18n="quote_patient_text">«Tomo una foto y listo. Ver mi peso como tendencia me quitó la presión de la balanza.»</p></blockquote>
-          <figcaption data-i18n="quote_patient_author">Daniela Ramirez, paciente</figcaption>
-        </figure>
-        <div class="criteria">
-          <h3 class="criteria__title" data-i18n="criteria_title">Criterio clínico a la vista</h3>
-          <ul class="criteria__list">
-            <li data-i18n="criteria_1">Fórmula y parámetros visibles en cada meta</li>
-            <li data-i18n="criteria_2">Diagnóstico sugerido siempre con su fundamento</li>
-            <li data-i18n="criteria_3">El paciente puede retirar su consentimiento</li>
-            <li data-i18n="criteria_4">Funciones con IA desactivables por el paciente</li>
+      <div class="container proof__inner">
+        <header class="proof__head">
+          <p class="proof__eyebrow" data-i18n="proof_eyebrow">Prueba social</p>
+          <h2 class="h-section proof__title" id="proof-title" data-i18n="proof_title">La misma consulta, vista desde los dos lados</h2>
+        </header>
+
+        <!-- Testimonios en borrador, por confirmar con sus autoras. Se editan en js/i18n.js (claves quote_*).
+             Los avatares con iniciales son placeholders hasta tener fotos. -->
+        <div class="proof__chat">
+          <div class="proof__msg proof__msg--nutri">
+            <p class="proof__tag" data-i18n="proof_tag_nutri">Nutricionista</p>
+            <figure class="quote">
+              <blockquote><p data-i18n="quote_nutri_text">«Llego a la consulta de control sabiendo cómo le fue a mi paciente cada día. Ya no dependo de lo que recuerde.»</p></blockquote>
+              <figcaption class="quote__author">
+                <span class="quote__avatar" aria-hidden="true">TM</span>
+                <span class="quote__who">
+                  <span class="quote__name" data-i18n="quote_nutri_name">Tatiana Mozombite</span>
+                  <span class="quote__role" data-i18n="quote_nutri_role">Nutricionista</span>
+                </span>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="proof__msg proof__msg--patient">
+            <p class="proof__tag" data-i18n="proof_tag_patient">Paciente</p>
+            <figure class="quote">
+              <blockquote><p data-i18n="quote_patient_text">«Tomo una foto y listo. Ver mi peso como tendencia me quitó la presión de la balanza.»</p></blockquote>
+              <figcaption class="quote__author">
+                <span class="quote__avatar" aria-hidden="true">DR</span>
+                <span class="quote__who">
+                  <span class="quote__name" data-i18n="quote_patient_name">Daniela Ramirez</span>
+                  <span class="quote__role" data-i18n="quote_patient_role">Paciente</span>
+                </span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="proof__trust">
+          <h3 class="proof__trust-title" id="criteria-title" data-i18n="criteria_title">Con criterio clínico a la vista</h3>
+          <ul class="proof__chips" aria-labelledby="criteria-title">
+            <li class="proof__chip"><svg class="proof__check" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="10"/><path d="M6.2 10.3l2.6 2.5 5-5.1"/></svg><span data-i18n="criteria_1">Fórmula y parámetros visibles en cada meta</span></li>
+            <li class="proof__chip"><svg class="proof__check" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="10"/><path d="M6.2 10.3l2.6 2.5 5-5.1"/></svg><span data-i18n="criteria_2">Diagnóstico sugerido siempre con su fundamento</span></li>
+            <li class="proof__chip"><svg class="proof__check" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="10"/><path d="M6.2 10.3l2.6 2.5 5-5.1"/></svg><span data-i18n="criteria_3">El paciente puede retirar su consentimiento</span></li>
+            <li class="proof__chip"><svg class="proof__check" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="10"/><path d="M6.2 10.3l2.6 2.5 5-5.1"/></svg><span data-i18n="criteria_4">Funciones con IA desactivables por el paciente</span></li>
           </ul>
         </div>
       </div>
