@@ -32,7 +32,7 @@ Static landing page for Healthify, a clinical tool that connects nutritionists a
 - On desktop (≥ 1024 px) every Home and About section is at least one screen tall (`--screen: max(100svh, 900px)`), so each one fits in 900 px at 1440 × 900. Nothing uses a fixed height that could cut text.
 - "The visit, step by step" is a 4-column grid on desktop and a scroll-snap carousel on mobile with a 1–4 step indicator.
 - Focus ring: 2 px with 2 px offset, `#3B6E23` on light backgrounds and `#B8E07A` on dark ones (`.on-dark`). `prefers-reduced-motion` is respected.
-- 
+
 ## Testimonials
 
 The two quotes on Home are a draft not yet confirmed by their authors. They live only in `js/i18n.js` (`quote_*` keys, ES and EN).
