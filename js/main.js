@@ -258,15 +258,22 @@ function initCarousel() {
     timer = setTimeout(() => goTo(current + 1), remaining);
   }
 
+  function youtubeId(u) {
+    const host = u.hostname.replace(/^(www|m)\./, '');
+    if (host !== 'youtu.be' && !host.endsWith('youtube.com') && !host.endsWith('youtube-nocookie.com')) return null;
+    const parts = u.pathname.split('/').filter(Boolean);
+    return (host === 'youtu.be' ? parts[0] : (u.searchParams.get('v') || parts[parts.length - 1])) || '';
+  }
+
   function embedFor(url) {
     let u;
     try { u = new URL(url); } catch (_) { return null; }
     const host = u.hostname.replace(/^(www|m)\./, '');
     const parts = u.pathname.split('/').filter(Boolean);
-    if (host === 'youtu.be' || host.endsWith('youtube.com') || host.endsWith('youtube-nocookie.com')) {
-      const id = host === 'youtu.be' ? parts[0] : (u.searchParams.get('v') || parts[parts.length - 1]);
-      if (!id) return null;
-      return { type: 'youtube', src: `https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}?autoplay=1&enablejsapi=1&rel=0&playsinline=1&origin=${encodeURIComponent(location.origin)}` };
+    const ytId = youtubeId(u);
+    if (ytId !== null) {
+      if (!ytId) return null;
+      return { type: 'youtube', id: ytId, src: `https://www.youtube-nocookie.com/embed/${encodeURIComponent(ytId)}?autoplay=1&enablejsapi=1&rel=0&playsinline=1&origin=${encodeURIComponent(location.origin)}` };
     }
     if (host.endsWith('vimeo.com')) {
       const id = parts.find(p => /^\d+$/.test(p));
@@ -358,8 +365,27 @@ function initCarousel() {
     syncState();
   }
 
+  // Con un video de YouTube, su miniatura cubre el póster dibujado (que queda de respaldo)
+  function addThumbnail(slide) {
+    const embed = embedFor(slide.dataset.videoUrl || '');
+    const poster = slide.querySelector('.video__poster');
+    if (embed?.type !== 'youtube' || !poster) return;
+    const base = `https://i.ytimg.com/vi/${encodeURIComponent(embed.id)}`;
+    const img = document.createElement('img');
+    img.className = 'video__thumb';
+    img.alt = '';
+    img.decoding = 'async';
+    img.addEventListener('error', () => {
+      if (img.src.endsWith('/maxresdefault.jpg')) img.src = `${base}/hqdefault.jpg`;
+      else img.remove();
+    });
+    img.src = `${base}/maxresdefault.jpg`;
+    poster.append(img);
+  }
+
   slides.forEach(slide => {
     slide.querySelector('[data-video-play]')?.addEventListener('click', () => playVideo(slide));
+    addThumbnail(slide);
   });
   prevBtn.addEventListener('click', () => goTo(current - 1, { user: true }));
   nextBtn.addEventListener('click', () => goTo(current + 1, { user: true }));
