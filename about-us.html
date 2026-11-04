@@ -42,7 +42,25 @@
             <button class="lang-switch__opt" type="button" data-lang="es" lang="es" aria-pressed="true" aria-label="Español">ES</button>
             <button class="lang-switch__opt" type="button" data-lang="en" lang="en" aria-pressed="false" aria-label="English">EN</button>
           </div>
-      <a class="btn btn--primary header__cta" href="https://appdistribution.firebase.dev/i/1dec518f210ca662" data-i18n="cta_download">Descargar para Android</a>
+      <div class="header-download" data-download>
+        <button class="btn btn--primary header__cta" type="button" aria-expanded="false" aria-controls="header-download-list"
+                aria-label="Elegir qué app descargar" data-i18n-aria="header_download_aria" data-download-toggle>
+          <span data-i18n="header_download">Descargar</span>
+          <span class="icon-chevron" aria-hidden="true"></span>
+        </button>
+        <ul class="header-download__panel" id="header-download-list" hidden>
+          <li><a class="header-download__opt" href="https://appdistribution.firebase.dev/i/ff7af63bc7988299">
+            <span class="header-download__logo"><img src="assets/icons/flutter.svg" width="24" height="24" alt="" aria-hidden="true" /></span>
+            <span class="header-download__text"><span class="header-download__title" data-i18n="download_nutri">Nutricionista</span><span class="header-download__sub" data-i18n="download_nutri_sub">App Flutter · Android 7.0 o superior</span></span>
+            <span class="header-download__arrow" aria-hidden="true"></span>
+          </a></li>
+          <li><a class="header-download__opt" href="https://appdistribution.firebase.dev/i/1dec518f210ca662">
+            <span class="header-download__logo"><img src="assets/icons/android.svg" width="24" height="24" alt="" aria-hidden="true" /></span>
+            <span class="header-download__text"><span class="header-download__title" data-i18n="download_patient">Paciente</span><span class="header-download__sub" data-i18n="download_patient_sub">App nativa · Android 7.0 o superior</span></span>
+            <span class="header-download__arrow" aria-hidden="true"></span>
+          </a></li>
+        </ul>
+      </div>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu"
               aria-label="Abrir menú" data-menu-toggle>
         <svg class="icon-open" width="20" height="14" viewBox="0 0 20 14" aria-hidden="true" focusable="false"><path d="M0 1h20M0 7h20M0 13h20" stroke="currentColor" stroke-width="2"/></svg>
@@ -68,7 +86,14 @@
             <button class="lang-switch__opt" type="button" data-lang="en" lang="en" aria-pressed="false" aria-label="English">EN</button>
           </div>
         </div>
-        <a class="btn btn--primary" href="https://appdistribution.firebase.dev/i/1dec518f210ca662" data-i18n="cta_download">Descargar para Android</a>
+        <div class="download mobile-menu__download">
+          <p class="download__label" data-i18n="download_label">Descarga Healthify para Android</p>
+          <div class="download__buttons">
+            <a class="btn btn--primary" href="https://appdistribution.firebase.dev/i/ff7af63bc7988299"><span class="btn__logo"><img src="assets/icons/flutter.svg" width="24" height="24" alt="" aria-hidden="true" /></span><span data-i18n="download_nutri">Nutricionista</span></a>
+            <a class="btn btn--cream" href="https://appdistribution.firebase.dev/i/1dec518f210ca662"><span class="btn__logo"><img src="assets/icons/android.svg" width="24" height="24" alt="" aria-hidden="true" /></span><span data-i18n="download_patient">Paciente</span></a>
+          </div>
+          <p class="download__req" data-i18n="download_req">Android 7.0 o superior</p>
+        </div>
       </div>
     </div>
   </header>
@@ -224,7 +249,7 @@
             <ul>
               <li><a href="about-us.html" data-i18n="nav_about">Nosotros</a></li>
               <li><a href="contact.html" data-i18n="nav_contact">Contacto</a></li>
-              <li><a href="https://appdistribution.firebase.dev/i/1dec518f210ca662" data-i18n="footer_download">Descargar la app</a></li>
+              <li><a href="https://appdistribution.firebase.dev/i/ff7af63bc7988299" data-i18n="footer_download">Descargar la app</a></li>
             </ul>
           </div>
           <div class="footer__col">
