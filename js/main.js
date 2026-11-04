@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   I18n.init();
   initLangSwitch();
   initMenu();
+  initDownloadMenu();
   initHeader();
   initCarousel();
   initSteps();
@@ -121,6 +122,37 @@ function initMenu() {
   desktop.addEventListener('change', e => { if (e.matches && isOpen()) setMenu(false, { returnFocus: false }); });
   document.addEventListener('i18n:change', syncLabel);
   syncLabel();
+}
+
+// «Descargar» del header (≥1200 px): disclosure con dos enlaces, uno por app
+function initDownloadMenu() {
+  const toggle = document.querySelector('[data-download-toggle]');
+  if (!toggle) return;
+  const wrap = toggle.closest('[data-download]');
+  const panel = document.getElementById(toggle.getAttribute('aria-controls'));
+
+  const isOpen = () => toggle.getAttribute('aria-expanded') === 'true';
+
+  function setOpen(open, { returnFocus = false } = {}) {
+    toggle.setAttribute('aria-expanded', String(open));
+    panel.hidden = !open;
+    if (!open && returnFocus) toggle.focus();
+  }
+
+  toggle.addEventListener('click', () => setOpen(!isOpen()));
+  panel.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setOpen(false)));
+
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape' || !isOpen()) return;
+    e.preventDefault();
+    setOpen(false, { returnFocus: true });
+  });
+  document.addEventListener('click', e => { if (isOpen() && !wrap.contains(e.target)) setOpen(false); });
+  wrap.addEventListener('focusout', e => {
+    if (isOpen() && e.relatedTarget && !wrap.contains(e.relatedTarget)) setOpen(false);
+  });
+
+  window.matchMedia('(min-width: 1200px)').addEventListener('change', e => { if (!e.matches) setOpen(false); });
 }
 
 function initHeader() {
