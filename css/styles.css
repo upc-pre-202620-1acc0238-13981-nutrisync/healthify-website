@@ -159,6 +159,28 @@ fieldset { border: 0; min-width: 0; }
 .btn--outline:hover { background: var(--green-50); }
 .btn--green { background: var(--green-700); color: var(--white); }
 .btn--green:hover { background: var(--green-900); }
+.btn--cream { background: var(--cream); color: var(--ink); }
+.btn--cream:hover { background: var(--neutral-100); }
+.btn__logo { display: inline-flex; flex: none; width: 24px; height: 24px; }
+.btn__logo img { width: 100%; height: 100%; object-fit: contain; }
+
+/* Elegir app: etiqueta, Nutricionista / Paciente y el requisito (hero y menú mobile) */
+.download { display: grid; text-align: center; }
+.download__label { font: var(--t-label-16); color: var(--lime-200); }
+.download__buttons { display: grid; gap: 12px; margin-top: 12px; }
+.download__buttons .btn { width: 100%; gap: 10px; }
+.download__req { font: var(--t-body-14); color: var(--cream); margin-top: 14px; }
+
+/* Íconos de una sola tinta: el SVG es la máscara y el color sale de currentColor */
+.icon-chevron, .header-download__arrow {
+  flex: none; width: 20px; height: 20px; background: currentColor;
+  -webkit-mask: url("../assets/icons/chevron-down.svg") center / contain no-repeat;
+          mask: url("../assets/icons/chevron-down.svg") center / contain no-repeat;
+}
+.header-download__arrow {
+  -webkit-mask-image: url("../assets/icons/chevron-right.svg");
+          mask-image: url("../assets/icons/chevron-right.svg");
+}
 .btn[aria-disabled="true"] { cursor: progress; }
 /* Botones de ejemplo dentro de una maqueta: misma forma, no interactivos */
 .btn--static { cursor: default; pointer-events: none; }
@@ -224,7 +246,31 @@ fieldset { border: 0; min-width: 0; }
   box-shadow: inset 0 0 0 4px var(--green-900);
 }
 
-.header__cta { flex: none; }
+.header-download { position: relative; flex: none; }
+.header__cta[aria-expanded="true"] .icon-chevron { transform: rotate(180deg); }
+.header-download__panel {
+  --focus: var(--green-700);
+  position: absolute; top: calc(100% + 8px); right: 0; z-index: 41;
+  width: max-content; min-width: 360px; padding: 8px;
+  background: var(--cream); color: var(--ink);
+  border-radius: var(--r-16); box-shadow: 0 8px 24px rgba(28, 28, 26, .3);
+}
+.header-download__panel li + li { border-top: 1px solid var(--line); }
+.header-download__opt {
+  display: flex; align-items: center; gap: 14px;
+  padding: 12px 16px; border-radius: var(--r-12);
+  color: var(--ink); text-decoration: none;
+}
+.header-download__opt:hover, .header-download__opt:focus-visible { background: var(--green-50); }
+.header-download__logo {
+  display: grid; place-items: center; flex: none;
+  width: 40px; height: 40px; border-radius: 50%; background: var(--green-100);
+}
+.header-download__logo img { width: 24px; height: 24px; object-fit: contain; }
+.header-download__text { display: grid; flex: 1; }
+.header-download__title { font: var(--t-strong-16); }
+.header-download__sub { font: var(--t-body-14); color: var(--text-2); white-space: nowrap; }
+.header-download__arrow { margin-left: auto; color: var(--green-700); }
 
 .menu-toggle {
   display: none; margin-left: auto;
@@ -271,7 +317,7 @@ fieldset { border: 0; min-width: 0; }
 .mobile-menu .btn { width: 100%; }
 
 @media (max-width: 1199.98px) {
-  .nav, .site-header .lang-switch--header, .header__cta { display: none; }
+  .nav, .site-header .lang-switch--header, .header-download { display: none; }
   .menu-toggle { display: inline-flex; }
 }
 @media (min-width: 1200px) {
@@ -343,15 +389,7 @@ fieldset { border: 0; min-width: 0; }
 .hero__content { padding-top: 24px; }
 .hero__title { font: var(--t-m-display); }
 .hero__lead { font: var(--t-body-16); color: var(--lime-200); margin-top: 16px; }
-.hero__actions { display: grid; gap: 12px; margin-top: 24px; }
-.hero__actions .btn { width: 100%; }
-.hero__invite {
-  display: inline-block; margin-top: 16px;
-  font: var(--t-label-16); color: var(--cream);
-  text-decoration: underline; text-underline-offset: 3px;
-  border-radius: var(--r-8);
-}
-.hero__invite:hover { text-decoration-thickness: 2px; }
+.hero__download { margin-top: 24px; }
 .hero__shots { position: relative; height: 282px; margin-top: 32px; overflow: hidden; }
 .hero__panel, .hero__phone--side { display: none; }
 .hero__phone--main { --pw: 240px; position: absolute; left: 50%; top: 0; transform: translateX(-50%); }
@@ -368,9 +406,9 @@ fieldset { border: 0; min-width: 0; }
   .hero__content { padding-top: 40px; text-align: center; }
   .hero__title { font: var(--t-display-m); max-width: 880px; margin-inline: auto; }
   .hero__lead { font: var(--t-body-20); max-width: 780px; margin: 30px auto 0; }
-  .hero__actions { display: flex; justify-content: center; gap: 16px; margin-top: 56px; }
-  .hero__actions .btn { width: auto; }
-  .hero__invite { margin-top: 20px; }
+  .hero__download { margin-top: 30px; }
+  .hero__download .download__buttons { display: flex; justify-content: center; gap: 16px; }
+  .hero__download .btn { width: auto; }
   .hero__shots { flex: 1 0 324px; height: auto; margin-top: 46px; }
   .hero__panel {
     display: block; position: absolute; top: 160px; left: 50%;
@@ -1186,6 +1224,11 @@ textarea.input { min-height: 128px; padding: 15px 16px; resize: vertical; }
   .btn--primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(245, 166, 35, .35); }
   .btn--primary:active { transform: none; box-shadow: none; }
 
+  .icon-chevron { transition: transform .2s ease; }
+  .header-download__opt { transition: background-color .15s ease; }
+  .header-download__panel:not([hidden]) { animation: dropdown-in .16s ease-out both; }
+  @keyframes dropdown-in { from { opacity: 0; transform: translateY(-4px); } }
+
   .js .reveal {
     opacity: 0; transform: translateY(24px);
     transition: opacity .7s ease, transform .7s cubic-bezier(.2, .7, .2, 1);
@@ -1193,13 +1236,12 @@ textarea.input { min-height: 128px; padding: 15px 16px; resize: vertical; }
   }
   .js .reveal.is-visible { opacity: 1; transform: none; }
 
-  .js .hero__title, .js .hero__lead, .js .hero__actions, .js .hero__invite, .js .hero__shots,
+  .js .hero__title, .js .hero__lead, .js .hero__download, .js .hero__shots,
   .js .about-hero .container > * {
     animation: hero-in .8s cubic-bezier(.2, .7, .2, 1) both;
   }
   .js .hero__lead, .js .about-hero .container > :nth-child(2) { animation-delay: .1s; }
-  .js .hero__actions, .js .about-hero .container > :nth-child(3) { animation-delay: .2s; }
-  .js .hero__invite { animation-delay: .28s; }
+  .js .hero__download, .js .about-hero .container > :nth-child(3) { animation-delay: .2s; }
   .js .hero__shots { animation-delay: .3s; animation-name: hero-media-in; }
   @keyframes hero-in { from { opacity: 0; transform: translateY(24px); } }
   @keyframes hero-media-in { from { opacity: 0; transform: translateY(32px) scale(.97); } }
